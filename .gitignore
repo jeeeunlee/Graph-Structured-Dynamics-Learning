@@ -1,0 +1,32 @@
+# Editor Setting files
+*.json
+.vscode
+
+# Compiled Python files
+*.pyc
+*__init__.py
+
+# Math tool files
+*.m~
+*_RESULTS.yaml
+octave-workspace
+
+# Zip file
+*.tar.xz
+
+# Log folders 
+dataset/magneto/raw*
+dataset/magneto/tf*
+result_data
+
+# simulator files
+gn_inverse_dynamics/robot_simulator/config/
+
+# venv
+venv/*
+
+# not used
+gn_inverse_dynamics/utils/pca.py
+gn_inverse_dynamics/utils/data_analyzer.py
+gn_inverse_dynamics/utils/normalizer.py
+

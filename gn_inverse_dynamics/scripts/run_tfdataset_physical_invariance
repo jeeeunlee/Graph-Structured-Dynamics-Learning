@@ -1,0 +1,104 @@
+#!/bin/bash
+
+######################################################
+#                       plane                        #
+######################################################
+
+## s1
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/plane_1/case1" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/plane_1/case1" \
+--shuffle=True --split_data=True
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/plane_1/case1_test" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/plane_1/case1_test" \
+--shuffle=True --split_data=False
+
+## s2
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/plane_1/case2" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/plane_1/case2" \
+--shuffle=True --split_data=True
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/plane_1/case2_test" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/plane_1/case2_test" \
+--shuffle=True --split_data=False
+
+######################################################
+#                       inclined                     #
+######################################################
+
+# c1
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/inclined_1/case1" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/inclined_1/case1" \
+--shuffle=True --split_data=True
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/inclined_1/case1_test1" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/inclined_1/case1_test1" \
+--shuffle=True --split_data=False
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/inclined_1/case1_test2" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/inclined_1/case1_test2" \
+--shuffle=True --split_data=False
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/inclined_1/case1_test3" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/inclined_1/case1_test3" \
+--shuffle=True --split_data=False
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/inclined_1/case1_test4" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/inclined_1/case1_test4" \
+--shuffle=True --split_data=False
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/inclined_1/case1_test5" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/inclined_1/case1_test5" \
+--shuffle=True --split_data=False
+
+## s2
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/inclined_1/case2" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/inclined_1/case2" \
+--shuffle=True --split_data=True
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/inclined_1/case2_test1" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/inclined_1/case2_test1" \
+--shuffle=True --split_data=False
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/inclined_1/case2_test2" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/inclined_1/case2_test2" \
+--shuffle=True --split_data=False
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/inclined_1/case2_test3" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/inclined_1/case2_test3" \
+--shuffle=True --split_data=False
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/inclined_1/case2_test4" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/inclined_1/case2_test4" \
+--shuffle=True --split_data=False
+
+## c3
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/inclined_1/case3" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/inclined_1/case3" \
+--shuffle=True --split_data=True
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/inclined_1/case3_test1" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/inclined_1/case3_test1" \
+--shuffle=True --split_data=False
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_physical_invariance/inclined_1/case3_test2" \
+--raw_data_dir="/dataset/magneto/rawData_physical_invariance/inclined_1/case3_test2" \
+--shuffle=True --split_data=False

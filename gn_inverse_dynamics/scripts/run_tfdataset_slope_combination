@@ -1,0 +1,90 @@
+#!/bin/bash
+
+## s1
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_slope_combination/case1" \
+--raw_data_dir="/dataset/magneto/rawData_slope_combination/case1" \
+--shuffle=True --split_data=True
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_slope_combination/case1_test" \
+--raw_data_dir="/dataset/magneto/rawData_slope_combination/case1_test" \
+--shuffle=True --split_data=False
+
+## s1+s2
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_slope_combination/case2" \
+--raw_data_dir="/dataset/magneto/rawData_slope_combination/case2" \
+--shuffle=True --split_data=True
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_slope_combination/case2_test" \
+--raw_data_dir="/dataset/magneto/rawData_slope_combination/case2_test" \
+--shuffle=True --split_data=False
+
+## s1+s2+s3
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_slope_combination/case3" \
+--raw_data_dir="/dataset/magneto/rawData_slope_combination/case3" \
+--shuffle=True --split_data=True
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_slope_combination/case3_test" \
+--raw_data_dir="/dataset/magneto/rawData_slope_combination/case3_test" \
+--shuffle=True --split_data=False
+
+## s1+s2+s3+s4
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_slope_combination/case4" \
+--raw_data_dir="/dataset/magneto/rawData_slope_combination/case4" \
+--shuffle=True --split_data=True
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_slope_combination/case4_test" \
+--raw_data_dir="/dataset/magneto/rawData_slope_combination/case4_test" \
+--shuffle=True --split_data=False
+
+## s1+s2+s3+s4+s5
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_slope_combination/case5" \
+--raw_data_dir="/dataset/magneto/rawData_slope_combination/case5" \
+--shuffle=True --split_data=True
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_slope_combination/case5_test" \
+--raw_data_dir="/dataset/magneto/rawData_slope_combination/case5_test" \
+--shuffle=True --split_data=False
+
+## s2
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_slope_combination/case6" \
+--raw_data_dir="/dataset/magneto/rawData_slope_combination/case6" \
+--shuffle=True --split_data=True
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_slope_combination/case6_test" \
+--raw_data_dir="/dataset/magneto/rawData_slope_combination/case6_test" \
+--shuffle=True --split_data=False
+
+## s2 + s3
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_slope_combination/case7" \
+--raw_data_dir="/dataset/magneto/rawData_slope_combination/case7" \
+--shuffle=True --split_data=True
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_slope_combination/case7_test" \
+--raw_data_dir="/dataset/magneto/rawData_slope_combination/case7_test" \
+--shuffle=True --split_data=False
+
+## s2 + s3 + s4
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_slope_combination/case8" \
+--raw_data_dir="/dataset/magneto/rawData_slope_combination/case8" \
+--shuffle=True --split_data=True
+
+python3 gn_inverse_dynamics/main_make_dataset.py \
+--dataset_dir="/dataset/magneto/tfData_slope_combination/case8_test" \
+--raw_data_dir="/dataset/magneto/rawData_slope_combination/case8_test" \
+--shuffle=True --split_data=False
+

@@ -1,0 +1,79 @@
+#!/bin/bash
+
+
+######################################################
+#                    combination                     #
+######################################################
+
+## c1
+python3 gn_inverse_dynamics/main_train_model.py --dataset_path="dataset/magneto/tfData_slope_combination/case1"  \
+--error_model="torque" --log_dir="slope_combination/case1_edge64_np3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --epoch_size=500 --num_processing_steps=3 --edge_latent_size=64 --edge_output_size=3
+
+## c2
+python3 gn_inverse_dynamics/main_train_model.py --dataset_path="dataset/magneto/tfData_slope_combination/case2"  \
+--error_model="torque" --log_dir="slope_combination/case2_edge64_np3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --epoch_size=500 --num_processing_steps=3 --edge_latent_size=64 --edge_output_size=3
+
+## c3
+python3 gn_inverse_dynamics/main_train_model.py --dataset_path="dataset/magneto/tfData_slope_combination/case3"  \
+--error_model="torque" --log_dir="slope_combination/case3_edge64_np3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --epoch_size=500 --num_processing_steps=3 --edge_latent_size=64 --edge_output_size=3
+
+## c4
+python3 gn_inverse_dynamics/main_train_model.py --dataset_path="dataset/magneto/tfData_slope_combination/case4"  \
+--error_model="torque" --log_dir="slope_combination/case4_edge64_np3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --epoch_size=500 --num_processing_steps=3 --edge_latent_size=64 --edge_output_size=3
+
+## c5
+python3 gn_inverse_dynamics/main_train_model.py --dataset_path="dataset/magneto/tfData_slope_combination/case5"  \
+--error_model="torque" --log_dir="slope_combination/case5_edge64_np3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --epoch_size=500 --num_processing_steps=3 --edge_latent_size=64 --edge_output_size=3
+
+## c6
+python3 gn_inverse_dynamics/main_train_model.py --dataset_path="dataset/magneto/tfData_slope_combination/case6"  \
+--error_model="torque" --log_dir="slope_combination/case6_edge64_np3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --epoch_size=500 --num_processing_steps=3 --edge_latent_size=64 --edge_output_size=3
+
+## c7
+python3 gn_inverse_dynamics/main_train_model.py --dataset_path="dataset/magneto/tfData_slope_combination/case7"  \
+--error_model="torque" --log_dir="slope_combination/case7_edge64_np3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --epoch_size=500 --num_processing_steps=3 --edge_latent_size=64 --edge_output_size=3
+
+## c8
+python3 gn_inverse_dynamics/main_train_model.py --dataset_path="dataset/magneto/tfData_slope_combination/case8"  \
+--error_model="torque" --log_dir="slope_combination/case8_edge64_np3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --epoch_size=500 --num_processing_steps=3 --edge_latent_size=64 --edge_output_size=3
+
+######################################################
+#                       plane                        #
+######################################################
+## c1
+python3 gn_inverse_dynamics/main_train_model.py --dataset_path="dataset/magneto/tfData_physical_invariance/plane_1/case1"  \
+--error_model="torque" --log_dir="physical_invariance/plane_1/case1_edge64_np3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --epoch_size=500 --num_processing_steps=3 --edge_latent_size=64 --edge_output_size=3
+
+## c2
+python3 gn_inverse_dynamics/main_train_model.py --dataset_path="dataset/magneto/tfData_physical_invariance/plane_1/case2"  \
+--error_model="torque" --log_dir="physical_invariance/plane_1/case2_edge64_np3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --epoch_size=500 --num_processing_steps=3 --edge_latent_size=64 --edge_output_size=3
+
+
+######################################################
+#                       inclined                     #
+######################################################
+
+## c1
+python3 gn_inverse_dynamics/main_train_model.py --dataset_path="dataset/magneto/tfData_physical_invariance/inclined_1/case1"  \
+--error_model="torque" --log_dir="physical_invariance/inclined_1/case1_edge64_np3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --epoch_size=500 --num_processing_steps=3 --edge_latent_size=64 --edge_output_size=3
+
+## c2
+python3 gn_inverse_dynamics/main_train_model.py --dataset_path="dataset/magneto/tfData_physical_invariance/inclined_1/case2"  \
+--error_model="torque" --log_dir="physical_invariance/inclined_1/case2_edge64_np3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --epoch_size=500 --num_processing_steps=3 --edge_latent_size=64 --edge_output_size=3
+
+## c3
+python3 gn_inverse_dynamics/main_train_model.py --dataset_path="dataset/magneto/tfData_physical_invariance/inclined_1/case3"  \
+--error_model="torque" --log_dir="physical_invariance/inclined_1/case3_edge64_np3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --epoch_size=500 --num_processing_steps=3 --edge_latent_size=64 --edge_output_size=3
