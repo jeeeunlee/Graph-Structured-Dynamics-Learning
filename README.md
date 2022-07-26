@@ -46,10 +46,10 @@ $ pip install graph_nets "tensorflow_gpu>=2.1.0-rc1" "dm-sonnet>=2.0.0b0" tensor
 ```
 
 ```
-$ pip install PyGeometry
-$ pip install scipy
-$ pip install urdfpy
-$ pip install dartpy
+$ pip install PyGeometry==1.5.6
+$ pip install scipy==1.5.4
+$ pip install urdfpy==0.0.22
+$ pip install dartpy==0.0.1.post11
 ```
 
 ## Code Explanation
