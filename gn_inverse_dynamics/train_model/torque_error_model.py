@@ -2,7 +2,7 @@
 import tensorflow as tf
 from gn_inverse_dynamics.train_model.train_model import TrainModel
 from gn_inverse_dynamics.train_model.run_functions import *
-from utils import mygraphutils as mygraphutils
+from gn_inverse_dynamics.utils import mygraphutils as mygraphutils
 
 
 
@@ -17,7 +17,8 @@ class TorqueErrorModel(TrainModel):
                 output_ops_tr = self.model(inputs_tr, self.num_processing_steps)
                 # Loss.
                 loss_ops_tr = self.create_loss_ops(targets_tr, output_ops_tr)
-                loss_tr = tf.math.reduce_sum(loss_ops_tr) / self.num_processing_steps   
+                #loss_tr = tf.math.reduce_sum(loss_ops_tr) / self.num_processing_steps   
+                loss_tr = loss_ops_tr[self.num_processing_steps-1]
 
             gradients = tape.gradient(loss_tr, self.model.trainable_variables)
             self.optimizer.apply(gradients, self.model.trainable_variables)
@@ -27,7 +28,8 @@ class TorqueErrorModel(TrainModel):
             output_ops_tr = self.model(inputs_tr, self.num_processing_steps)
             # Loss.
             loss_ops_tr = self.create_loss_ops(targets_tr, output_ops_tr)
-            loss_tr = tf.math.reduce_sum(loss_ops_tr) / self.num_processing_steps
+            #loss_tr = tf.math.reduce_sum(loss_ops_tr) / self.num_processing_steps
+            loss_tr = loss_ops_tr[self.num_processing_steps-1]
             return output_ops_tr, loss_tr
 
         ## step functions
@@ -55,7 +57,7 @@ class TorqueErrorModel(TrainModel):
         self.min_loss = batch_loss_sum #0.02  
         print("T {:.1f}, Ltr of initial raw model = {}".format( 
                                 self.TOTAL_TIMER.elapsed(), batch_loss_sum ) )
-
+        break_count = 0
         for epoch in range(0, self.epoch_size):
             self.update_dataset_batch() #shuffle
             batch_loss_sum = run_one_epoch(compiled_update_step, self.dataset_batch)
@@ -66,9 +68,21 @@ class TorqueErrorModel(TrainModel):
                 self.logf_val.record_time_loss(self.TOTAL_TIMER.elapsed(), val_batch_loss_sum)
                 print("T {:.1f}, epoch_iter = {:02d}, Ltr {:.4f}, ValLtr {:.4f}".format(
                         self.TOTAL_TIMER.elapsed(), epoch, batch_loss_sum, val_batch_loss_sum))
+
+                if(val_batch_loss_sum*0.7 > batch_loss_sum):
+                    break_count = break_count + 1
+                    print(" cnt = {:02d}, val_batch_loss_sum*0.7 > batch_loss_sum ", break_count)
+                else:
+                    break_count = 0
+                
+                if(break_count > 3):
+                    print(" cnt = {:02d}", break_count)
+                    break
                     
             else:
                 print("T {:.1f}, epoch_iter = {:02d}, Ltr {:.4f}".format(
                     self.TOTAL_TIMER.elapsed(), epoch, batch_loss_sum))
+
+
 
             self.save_model(batch_loss_sum)

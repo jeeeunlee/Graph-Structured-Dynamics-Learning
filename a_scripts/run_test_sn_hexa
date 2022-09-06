@@ -1,0 +1,202 @@
+#!/bin/bash
+
+######################################################
+#                       train                        #
+######################################################
+
+
+###########################################################################################################################
+
+# python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto/SN/case1"  \
+# --error_model="torque" --log_dir="hexa_magneto/SN/case1_latent128_layer2_np2" --save_model_path="/saved_model" \
+# --learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+# python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto/SN/case2"  \
+# --error_model="torque" --log_dir="hexa_magneto/SN/case2_latent128_layer2_np2" --save_model_path="/saved_model" \
+# --learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+# python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto/SN/case3"  \
+# --error_model="torque" --log_dir="hexa_magneto/SN/case3_latent128_layer2_np2" --save_model_path="/saved_model" \
+# --learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+# python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto/SN/case4"  \
+# --error_model="torque" --log_dir="hexa_magneto/SN/case4_latent128_layer2_np2" --save_model_path="/saved_model" \
+# --learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+# python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto/SN/case5"  \
+# --error_model="torque" --log_dir="hexa_magneto/SN/case5_latent128_layer2_np2" --save_model_path="/saved_model" \
+# --learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+# python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto/SN/case6"  \
+# --error_model="torque" --log_dir="hexa_magneto/SN/case6_latent128_layer2_np2" --save_model_path="/saved_model" \
+# --learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+# python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto/SN/case7"  \
+# --error_model="torque" --log_dir="hexa_magneto/SN/case7_latent128_layer2_np2" --save_model_path="/saved_model" \
+# --learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+# python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto/SN/case8"  \
+# --error_model="torque" --log_dir="hexa_magneto/SN/case8_latent128_layer2_np2" --save_model_path="/saved_model" \
+# --learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+# python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto/SN/case9"  \
+# --error_model="torque" --log_dir="hexa_magneto/SN/case9_latent128_layer2_np2" --save_model_path="/saved_model" \
+# --learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+# python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto/SN/case10"  \
+# --error_model="torque" --log_dir="hexa_magneto/SN/case10_latent128_layer2_np2" --save_model_path="/saved_model" \
+# --learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+# python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto/SN/case11"  \
+# --error_model="torque" --log_dir="hexa_magneto/SN/case11_latent128_layer2_np2" --save_model_path="/saved_model" \
+# --learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+# python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto/SN/case12"  \
+# --error_model="torque" --log_dir="hexa_magneto/SN/case12_latent128_layer2_np2" --save_model_path="/saved_model" \
+# --learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+# python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto/SN/case13"  \
+# --error_model="torque" --log_dir="hexa_magneto/SN/case13_latent128_layer2_np2" --save_model_path="/saved_model" \
+# --learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+# python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto/SN/caseall"  \
+# --error_model="torque" --log_dir="hexa_magneto/SN/caseall_latent128_layer2_np2" --save_model_path="/saved_model" \
+# --learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+
+######################################################
+#                       validation                   #
+######################################################
+
+# #0
+# python3 main_check_model_sn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/SN/case1"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/SN/case1" \
+# --load_model_path="a_result/hexa_magneto/SN/case1_latent128_layer2_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/SN/case1_test1_latent128_layer2_np2" \
+# --latent_size=128 \
+# --output_size=3 \
+# --num_layer=2 \
+# --num_processing_steps=2
+
+# #1
+# python3 main_check_model_sn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/SN/case1"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/SN/case2" \
+# --load_model_path="a_result/hexa_magneto/SN/case1_latent128_layer2_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/SN/case1_test2_latent128_layer2_np2" \
+# --latent_size=128 \
+# --output_size=3 \
+# --num_layer=2 \
+# --num_processing_steps=2
+
+# #2
+# python3 main_check_model_sn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/SN/case1"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/SN/case3" \
+# --load_model_path="a_result/hexa_magneto/SN/case1_latent128_layer2_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/SN/case1_test3_latent128_layer2_np2" \
+# --latent_size=128 \
+# --output_size=3 \
+# --num_layer=2 \
+# --num_processing_steps=2
+
+# #3
+# python3 main_check_model_sn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/SN/case5"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/SN/case4" \
+# --load_model_path="a_result/hexa_magneto/SN/case5_latent128_layer2_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/SN/case5_test4_latent128_layer2_np2" \
+# --latent_size=128 \
+# --output_size=3 \
+# --num_layer=2 \
+# --num_processing_steps=2
+
+# #4
+# python3 main_check_model_sn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/SN/case6"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/SN/case4" \
+# --load_model_path="a_result/hexa_magneto/SN/case6_latent128_layer2_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/SN/case6_test4_latent128_layer2_np2" \
+# --latent_size=128 \
+# --output_size=3 \
+# --num_layer=2 \
+# --num_processing_steps=2
+
+# #5
+# python3 main_check_model_sn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/SN/case7"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/SN/case10" \
+# --load_model_path="a_result/hexa_magneto/SN/case7_latent128_layer2_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/SN/case7_test10_latent128_layer2_np2" \
+# --latent_size=128 \
+# --output_size=3 \
+# --num_layer=2 \
+# --num_processing_steps=2
+
+
+# #6
+# python3 main_check_model_sn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/SN/case8"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/SN/case10" \
+# --load_model_path="a_result/hexa_magneto/SN/case8_latent128_layer2_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/SN/case8_test10_latent128_layer2_np2" \
+# --latent_size=128 \
+# --output_size=3 \
+# --num_layer=2 \
+# --num_processing_steps=2
+
+# #7
+# python3 main_check_model_sn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/SN/case9"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/SN/case10" \
+# --load_model_path="a_result/hexa_magneto/SN/case9_latent128_layer2_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/SN/case9_test10_latent128_layer2_np2" \
+# --latent_size=128 \
+# --output_size=3 \
+# --num_layer=2 \
+# --num_processing_steps=2
+
+# #8
+# python3 main_check_model_sn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/SN/case11"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/SN/case13" \
+# --load_model_path="a_result/hexa_magneto/SN/case11_latent128_layer2_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/SN/case11_test13_latent128_layer2_np2" \
+# --latent_size=128 \
+# --output_size=3 \
+# --num_layer=2 \
+# --num_processing_steps=2
+
+# #9
+# python3 main_check_model_sn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/SN/case12"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/SN/case13" \
+# --load_model_path="a_result/hexa_magneto/SN/case12_latent128_layer2_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/SN/case12_test13_latent128_layer2_np2" \
+# --latent_size=128 \
+# --output_size=3 \
+# --num_layer=2 \
+# --num_processing_steps=2
+
+# #10
+# python3 main_check_model_sn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/SN/case13"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/SN/caseall" \
+# --load_model_path="a_result/hexa_magneto/SN/case13_latent128_layer2_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/SN/case13_testall_latent128_layer2_np2" \
+# --latent_size=128 \
+# --output_size=3 \
+# --num_layer=2 \
+# --num_processing_steps=2

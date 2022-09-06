@@ -29,10 +29,10 @@ class MagnetoWorldNode(dart.gui.osg.WorldNode): #RealTimeWorldNode
 
     def _set_check_model_ineterface(self):
         interface_params = InterfaceParams()
-        interface_params.save_dir = "result_data/checkmodel"
+        interface_params.save_dir = "a_result/checkmodel"
         interface_params.base_data_path = "gn_inverse_dynamics/robot_graph_generator/magneto/magneto_simple.urdf"
-        interface_params.traj_data_dir = "dataset/magneto/rawData_slope_combination/case6"
-        interface_params.saved_model_path = "result_data/slope_combination/case5_edge64_np3/saved_model"
+        interface_params.traj_data_dir = "a_dataset/magneto/rawData_slope_combination/case6"
+        interface_params.saved_model_path = "a_result/slope_combination/case5_edge64_np3/saved_model"
         interface_params.num_processing_steps = 3
         interface_params.edge_output_size = 3 
         interface_params.edge_latent_size = 64

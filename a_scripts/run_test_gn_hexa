@@ -1,0 +1,216 @@
+#!/bin/bash
+
+######################################################
+#                       train                        #
+######################################################
+
+# python3 main_train_model_gn.py --dataset_path="a_dataset/tfData/hexa_magneto/GN/case1"  \
+# --error_model="torque" --log_dir="hexa_magneto/GN/case1_edge64_np2" --save_model_path="/saved_model" \
+# --learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+# python3 main_train_model_gn.py --dataset_path="a_dataset/tfData/hexa_magneto/GN/case2"  \
+# --error_model="torque" --log_dir="hexa_magneto/GN/case2_edge64_np2" --save_model_path="/saved_model" \
+# --learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+# python3 main_train_model_gn.py --dataset_path="a_dataset/tfData/hexa_magneto/GN/case3"  \
+# --error_model="torque" --log_dir="hexa_magneto/GN/case3_edge64_np2" --save_model_path="/saved_model" \
+# --learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+# python3 main_train_model_gn.py --dataset_path="a_dataset/tfData/hexa_magneto/GN/case4"  \
+# --error_model="torque" --log_dir="hexa_magneto/GN/case4_edge64_np2" --save_model_path="/saved_model" \
+# --learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+# python3 main_train_model_gn.py --dataset_path="a_dataset/tfData/hexa_magneto/GN/case5"  \
+# --error_model="torque" --log_dir="hexa_magneto/GN/case5_edge64_np2" --save_model_path="/saved_model" \
+# --learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+python3 main_train_model_gn.py --dataset_path="a_dataset/tfData/hexa_magneto/GN/case5_2"  \
+--error_model="torque" --log_dir="hexa_magneto/GN/case5_2_edge64_np2" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+python3 main_train_model_gn.py --dataset_path="a_dataset/tfData/hexa_magneto/GN/case5_3"  \
+--error_model="torque" --log_dir="hexa_magneto/GN/case5_3_edge64_np2" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+# python3 main_train_model_gn.py --dataset_path="a_dataset/tfData/hexa_magneto/GN/case6"  \
+# --error_model="torque" --log_dir="hexa_magneto/GN/case6_edge64_np2" --save_model_path="/saved_model" \
+# --learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+# python3 main_train_model_gn.py --dataset_path="a_dataset/tfData/hexa_magneto/GN/case7"  \
+# --error_model="torque" --log_dir="hexa_magneto/GN/case7_edge64_np2" --save_model_path="/saved_model" \
+# --learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+# python3 main_train_model_gn.py --dataset_path="a_dataset/tfData/hexa_magneto/GN/case8"  \
+# --error_model="torque" --log_dir="hexa_magneto/GN/case8_edge64_np2" --save_model_path="/saved_model" \
+# --learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+# python3 main_train_model_gn.py --dataset_path="a_dataset/tfData/hexa_magneto/GN/case9"  \
+# --error_model="torque" --log_dir="hexa_magneto/GN/case9_edge64_np2" --save_model_path="/saved_model" \
+# --learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+# python3 main_train_model_gn.py --dataset_path="a_dataset/tfData/hexa_magneto/GN/case10"  \
+# --error_model="torque" --log_dir="hexa_magneto/GN/case10_edge64_np2" --save_model_path="/saved_model" \
+# --learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+# python3 main_train_model_gn.py --dataset_path="a_dataset/tfData/hexa_magneto/GN/case11"  \
+# --error_model="torque" --log_dir="hexa_magneto/GN/case11_edge64_np2" --save_model_path="/saved_model" \
+# --learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+# python3 main_train_model_gn.py --dataset_path="a_dataset/tfData/hexa_magneto/GN/case12"  \
+# --error_model="torque" --log_dir="hexa_magneto/GN/case12_edge64_np2" --save_model_path="/saved_model" \
+# --learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+# python3 main_train_model_gn.py --dataset_path="a_dataset/tfData/hexa_magneto/GN/case13"  \
+# --error_model="torque" --log_dir="hexa_magneto/GN/case13_edge64_np2" --save_model_path="/saved_model" \
+# --learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+# python3 main_train_model_gn.py --dataset_path="a_dataset/tfData/hexa_magneto/GN/caseall"  \
+# --error_model="torque" --log_dir="hexa_magneto/GN/caseall_edge64_np2" --save_model_path="/saved_model" \
+# --learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+
+######################################################
+#                       validation                   #
+######################################################
+
+#0 - test
+# python3 main_check_model_gn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/GN/case1"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/GN/case1" \
+# --load_model_path="a_result/hexa_magneto/GN/case1_edge64_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/GN/case1_test1_edge64_np2" \
+# --num_processing_steps=2 \
+# --edge_latent_size=64 \
+# --edge_output_size=3
+
+
+# # 1
+# python3 main_check_model_gn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/GN/case1"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/GN/case2" \
+# --load_model_path="a_result/hexa_magneto/GN/case1_edge64_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/GN/case1_test2_edge64_np2" \
+# --num_processing_steps=2 \
+# --edge_latent_size=64 \
+# --edge_output_size=3
+
+# #2
+# python3 main_check_model_gn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/GN/case1"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/GN/case3" \
+# --load_model_path="a_result/hexa_magneto/GN/case1_edge64_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/GN/case1_test3_edge64_np2" \
+# --num_processing_steps=2 \
+# --edge_latent_size=64 \
+# --edge_output_size=3
+
+# #3
+# python3 main_check_model_gn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/GN/case5"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/GN/case4" \
+# --load_model_path="a_result/hexa_magneto/GN/case5_edge64_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/GN/case5_test4_edge64_np2" \
+# --num_processing_steps=2 \
+# --edge_latent_size=64 \
+# --edge_output_size=3
+
+python3 main_check_model_gn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/hexa_magneto/GN/case5_2"  \
+--test_dataset_path="a_dataset/tfData/hexa_magneto/GN/case4" \
+--load_model_path="a_result/hexa_magneto/GN/case5_2_edge64_np2/saved_model" \
+--log_dir="check_model/hexa_magneto/GN/case5_2_test4_edge64_np2" \
+--num_processing_steps=2 \
+--edge_latent_size=64 \
+--edge_output_size=3
+
+python3 main_check_model_gn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/hexa_magneto/GN/case5_3"  \
+--test_dataset_path="a_dataset/tfData/hexa_magneto/GN/case4" \
+--load_model_path="a_result/hexa_magneto/GN/case5_3_edge64_np2/saved_model" \
+--log_dir="check_model/hexa_magneto/GN/case5_3_test4_edge64_np2" \
+--num_processing_steps=2 \
+--edge_latent_size=64 \
+--edge_output_size=3
+
+# #4
+# python3 main_check_model_gn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/GN/case6"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/GN/case4" \
+# --load_model_path="a_result/hexa_magneto/GN/case6_edge64_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/GN/case6_test4_edge64_np2" \
+# --num_processing_steps=2 \
+# --edge_latent_size=64 \
+# --edge_output_size=3
+
+# #5
+# python3 main_check_model_gn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/GN/case7"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/GN/case10" \
+# --load_model_path="a_result/hexa_magneto/GN/case7_edge64_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/GN/case7_test10_edge64_np2" \
+# --num_processing_steps=2 \
+# --edge_latent_size=64 \
+# --edge_output_size=3
+
+# #6
+# python3 main_check_model_gn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/GN/case8"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/GN/case10" \
+# --load_model_path="a_result/hexa_magneto/GN/case8_edge64_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/GN/case8_test10_edge64_np2" \
+# --num_processing_steps=2 \
+# --edge_latent_size=64 \
+# --edge_output_size=3
+
+# #7
+# python3 main_check_model_gn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/GN/case9"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/GN/case10" \
+# --load_model_path="a_result/hexa_magneto/GN/case9_edge64_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/GN/case9_test10_edge64_np2" \
+# --num_processing_steps=2 \
+# --edge_latent_size=64 \
+# --edge_output_size=3
+
+# #8
+# python3 main_check_model_gn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/GN/case11"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/GN/case13" \
+# --load_model_path="a_result/hexa_magneto/GN/case11_edge64_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/GN/case11_test13_edge64_np2" \
+# --num_processing_steps=2 \
+# --edge_latent_size=64 \
+# --edge_output_size=3
+
+# #9
+# python3 main_check_model_gn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/GN/case12"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/GN/case13" \
+# --load_model_path="a_result/hexa_magneto/GN/case12_edge64_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/GN/case12_test13_edge64_np2" \
+# --num_processing_steps=2 \
+# --edge_latent_size=64 \
+# --edge_output_size=3
+
+# #10
+# python3 main_check_model_gn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/hexa_magneto/GN/case13"  \
+# --test_dataset_path="a_dataset/tfData/hexa_magneto/GN/caseall" \
+# --load_model_path="a_result/hexa_magneto/GN/case13_edge64_np2/saved_model" \
+# --log_dir="check_model/hexa_magneto/GN/case13_testall_edge64_np2" \
+# --num_processing_steps=2 \
+# --edge_latent_size=64 \
+# --edge_output_size=3

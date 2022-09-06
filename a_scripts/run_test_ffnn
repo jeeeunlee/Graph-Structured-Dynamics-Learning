@@ -1,0 +1,174 @@
+#!/bin/bash
+
+######################################################
+#                       train                        #
+######################################################
+
+python3 main_train_model_ffnn.py --dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case1"  \
+--error_model="torque" --log_dir="ros_pnc2/FFNN/case1_latent256_layer3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=300 --latent_size=256 --output_size=12 --num_layer=3
+
+python3 main_train_model_ffnn.py --dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case2"  \
+--error_model="torque" --log_dir="ros_pnc2/FFNN/case2_latent256_layer3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=300 --latent_size=256 --output_size=12 --num_layer=3
+
+python3 main_train_model_ffnn.py --dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case3"  \
+--error_model="torque" --log_dir="ros_pnc2/FFNN/case3_latent256_layer3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=300 --latent_size=256 --output_size=12 --num_layer=3
+
+python3 main_train_model_ffnn.py --dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case4"  \
+--error_model="torque" --log_dir="ros_pnc2/FFNN/case4_latent256_layer3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=300 --latent_size=256 --output_size=12 --num_layer=3
+
+python3 main_train_model_ffnn.py --dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case5"  \
+--error_model="torque" --log_dir="ros_pnc2/FFNN/case5_latent256_layer3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=300 --latent_size=256 --output_size=12 --num_layer=3
+
+python3 main_train_model_ffnn.py --dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case6"  \
+--error_model="torque" --log_dir="ros_pnc2/FFNN/case6_latent256_layer3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=300 --latent_size=256 --output_size=12 --num_layer=3
+
+python3 main_train_model_ffnn.py --dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case7"  \
+--error_model="torque" --log_dir="ros_pnc2/FFNN/case7_latent256_layer3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=300 --latent_size=256 --output_size=12 --num_layer=3
+
+python3 main_train_model_ffnn.py --dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case8"  \
+--error_model="torque" --log_dir="ros_pnc2/FFNN/case8_latent256_layer3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=300 --latent_size=256 --output_size=12 --num_layer=3
+
+python3 main_train_model_ffnn.py --dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case9"  \
+--error_model="torque" --log_dir="ros_pnc2/FFNN/case9_latent256_layer3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=300 --latent_size=256 --output_size=12 --num_layer=3
+
+python3 main_train_model_ffnn.py --dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case10"  \
+--error_model="torque" --log_dir="ros_pnc2/FFNN/case10_latent256_layer3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=300 --latent_size=256 --output_size=12 --num_layer=3
+
+python3 main_train_model_ffnn.py --dataset_path="a_dataset/tfData/ros_pnc2/FFNN/caseall"  \
+--error_model="torque" --log_dir="ros_pnc2/FFNN/caseall_latent256_layer3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=300 --latent_size=256 --output_size=12 --num_layer=3
+
+
+######################################################
+#                       validation                   #
+######################################################
+
+python3 main_check_model_ffnn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case1"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case2" \
+--load_model_path="a_result/ros_pnc2/FFNN/case1_latent256_layer3/saved_model" \
+--log_dir="check_model/ros_pnc2/FFNN/case1_test2_latent256_layer3" \
+--latent_size=256 \
+--output_size=12 \
+--num_layer=3
+
+python3 main_check_model_ffnn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case2"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case3" \
+--load_model_path="a_result/ros_pnc2/FFNN/case2_latent256_layer3/saved_model" \
+--log_dir="check_model/ros_pnc2/FFNN/case2_test3_latent256_layer3" \
+--latent_size=256 \
+--output_size=12 \
+--num_layer=3
+
+python3 main_check_model_ffnn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case2"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case4" \
+--load_model_path="a_result/ros_pnc2/FFNN/case2_latent256_layer3/saved_model" \
+--log_dir="check_model/ros_pnc2/FFNN/case2_test4_latent256_layer3" \
+--latent_size=256 \
+--output_size=12 \
+--num_layer=3
+
+python3 main_check_model_ffnn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case2"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case5" \
+--load_model_path="a_result/ros_pnc2/FFNN/case2_latent256_layer3/saved_model" \
+--log_dir="check_model/ros_pnc2/FFNN/case2_test5_latent256_layer3" \
+--latent_size=256 \
+--output_size=12 \
+--num_layer=3
+
+python3 main_check_model_ffnn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case2"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case6" \
+--load_model_path="a_result/ros_pnc2/FFNN/case2_latent256_layer3/saved_model" \
+--log_dir="check_model/ros_pnc2/FFNN/case2_test6_latent256_layer3" \
+--latent_size=256 \
+--output_size=12 \
+--num_layer=3
+
+python3 main_check_model_ffnn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case7"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/FFNN/caseall" \
+--load_model_path="a_result/ros_pnc2/FFNN/case7_latent256_layer3/saved_model" \
+--log_dir="check_model/ros_pnc2/FFNN/case7_testall_latent256_layer3" \
+--latent_size=256 \
+--output_size=12 \
+--num_layer=3
+
+python3 main_check_model_ffnn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case8"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/FFNN/caseall" \
+--load_model_path="a_result/ros_pnc2/FFNN/case8_latent256_layer3/saved_model" \
+--log_dir="check_model/ros_pnc2/FFNN/case8_testall_latent256_layer3" \
+--latent_size=256 \
+--output_size=12 \
+--num_layer=3
+
+python3 main_check_model_ffnn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case9"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/FFNN/caseall" \
+--load_model_path="a_result/ros_pnc2/FFNN/case9_latent256_layer3/saved_model" \
+--log_dir="check_model/ros_pnc2/FFNN/case9_testall_latent256_layer3" \
+--latent_size=256 \
+--output_size=12 \
+--num_layer=3
+
+python3 main_check_model_ffnn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case10"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/FFNN/caseall" \
+--load_model_path="a_result/ros_pnc2/FFNN/case10_latent256_layer3/saved_model" \
+--log_dir="check_model/ros_pnc2/FFNN/case10_testall_latent256_layer3" \
+--latent_size=256 \
+--output_size=12 \
+--num_layer=3
+
+python3 main_check_model_ffnn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case7"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case8" \
+--load_model_path="a_result/ros_pnc2/FFNN/case7_latent256_layer3/saved_model" \
+--log_dir="check_model/ros_pnc2/FFNN/case7_test8_latent256_layer3" \
+--latent_size=256 \
+--output_size=12 \
+--num_layer=3
+
+python3 main_check_model_ffnn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case8"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case3" \
+--load_model_path="a_result/ros_pnc2/FFNN/case8_latent256_layer3/saved_model" \
+--log_dir="check_model/ros_pnc2/FFNN/case8_test3_latent256_layer3" \
+--latent_size=256 \
+--output_size=12 \
+--num_layer=3
+
+python3 main_check_model_ffnn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case8"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/FFNN/case6" \
+--load_model_path="a_result/ros_pnc2/FFNN/case8_latent256_layer3/saved_model" \
+--log_dir="check_model/ros_pnc2/FFNN/case8_test6_latent256_layer3" \
+--latent_size=256 \
+--output_size=12 \
+--num_layer=3

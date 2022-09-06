@@ -1,0 +1,193 @@
+#!/bin/bash
+
+######################################################
+#                       train                        #
+######################################################
+
+
+###########################################################################################################################
+
+python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/ros_pnc2/SN/case1"  \
+--error_model="torque" --log_dir="ros_pnc2/SN/case1_latent128_layer2_np2" --save_model_path="/saved_model" \
+--learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/ros_pnc2/SN/case2"  \
+--error_model="torque" --log_dir="ros_pnc2/SN/case2_latent128_layer2_np2" --save_model_path="/saved_model" \
+--learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/ros_pnc2/SN/case3"  \
+--error_model="torque" --log_dir="ros_pnc2/SN/case3_latent128_layer2_np2" --save_model_path="/saved_model" \
+--learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/ros_pnc2/SN/case4"  \
+--error_model="torque" --log_dir="ros_pnc2/SN/case4_latent128_layer2_np2" --save_model_path="/saved_model" \
+--learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/ros_pnc2/SN/case5"  \
+--error_model="torque" --log_dir="ros_pnc2/SN/case5_latent128_layer2_np2" --save_model_path="/saved_model" \
+--learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/ros_pnc2/SN/case6"  \
+--error_model="torque" --log_dir="ros_pnc2/SN/case6_latent128_layer2_np2" --save_model_path="/saved_model" \
+--learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/ros_pnc2/SN/case7"  \
+--error_model="torque" --log_dir="ros_pnc2/SN/case7_latent128_layer2_np2" --save_model_path="/saved_model" \
+--learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/ros_pnc2/SN/case8"  \
+--error_model="torque" --log_dir="ros_pnc2/SN/case8_latent128_layer2_np2" --save_model_path="/saved_model" \
+--learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/ros_pnc2/SN/case9"  \
+--error_model="torque" --log_dir="ros_pnc2/SN/case9_latent128_layer2_np2" --save_model_path="/saved_model" \
+--learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/ros_pnc2/SN/case10"  \
+--error_model="torque" --log_dir="ros_pnc2/SN/case10_latent128_layer2_np2" --save_model_path="/saved_model" \
+--learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/ros_pnc2/SN/caseall"  \
+--error_model="torque" --log_dir="ros_pnc2/SN/caseall_latent128_layer2_np2" --save_model_path="/saved_model" \
+--learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+
+
+
+######################################################
+#                       validation                   #
+######################################################
+
+
+python3 main_check_model_sn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/SN/case1"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/SN/case2" \
+--load_model_path="a_result/ros_pnc2/SN/case1_latent128_layer2_np2/saved_model" \
+--log_dir="check_model/ros_pnc2/SN/case1_test2_latent128_layer2_np2" \
+--latent_size=128 \
+--output_size=3 \
+--num_layer=2 \
+--num_processing_steps=2
+
+
+python3 main_check_model_sn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/SN/case2"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/SN/case3" \
+--load_model_path="a_result/ros_pnc2/SN/case2_latent128_layer2_np2/saved_model" \
+--log_dir="check_model/ros_pnc2/SN/case2_test3_latent128_layer2_np2" \
+--latent_size=128 \
+--output_size=3 \
+--num_layer=2 \
+--num_processing_steps=2
+
+python3 main_check_model_sn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/SN/case2"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/SN/case4" \
+--load_model_path="a_result/ros_pnc2/SN/case2_latent128_layer2_np2/saved_model" \
+--log_dir="check_model/ros_pnc2/SN/case2_test4_latent128_layer2_np2" \
+--latent_size=128 \
+--output_size=3 \
+--num_layer=2 \
+--num_processing_steps=2
+
+python3 main_check_model_sn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/SN/case2"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/SN/case5" \
+--load_model_path="a_result/ros_pnc2/SN/case2_latent128_layer2_np2/saved_model" \
+--log_dir="check_model/ros_pnc2/SN/case2_test5_latent128_layer2_np2" \
+--latent_size=128 \
+--output_size=3 \
+--num_layer=2 \
+--num_processing_steps=2
+
+python3 main_check_model_sn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/SN/case2"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/SN/case6" \
+--load_model_path="a_result/ros_pnc2/SN/case2_latent128_layer2_np2/saved_model" \
+--log_dir="check_model/ros_pnc2/SN/case2_test6_latent128_layer2_np2" \
+--latent_size=128 \
+--output_size=3 \
+--num_layer=2 \
+--num_processing_steps=2
+
+python3 main_check_model_sn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/SN/case7"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/SN/caseall" \
+--load_model_path="a_result/ros_pnc2/SN/case7_latent128_layer2_np2/saved_model" \
+--log_dir="check_model/ros_pnc2/SN/case7_testall_latent128_layer2_np2" \
+--latent_size=128 \
+--output_size=3 \
+--num_layer=2 \
+--num_processing_steps=2
+
+python3 main_check_model_sn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/SN/case8"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/SN/caseall" \
+--load_model_path="a_result/ros_pnc2/SN/case8_latent128_layer2_np2/saved_model" \
+--log_dir="check_model/ros_pnc2/SN/case8_testall_latent128_layer2_np2" \
+--latent_size=128 \
+--output_size=3 \
+--num_layer=2 \
+--num_processing_steps=2
+
+python3 main_check_model_sn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/SN/case9"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/SN/caseall" \
+--load_model_path="a_result/ros_pnc2/SN/case9_latent128_layer2_np2/saved_model" \
+--log_dir="check_model/ros_pnc2/SN/case9_testall_latent128_layer2_np2" \
+--latent_size=128 \
+--output_size=3 \
+--num_layer=2 \
+--num_processing_steps=2
+
+python3 main_check_model_sn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/SN/case10"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/SN/caseall" \
+--load_model_path="a_result/ros_pnc2/SN/case10_latent128_layer2_np2/saved_model" \
+--log_dir="check_model/ros_pnc2/SN/case10_testall_latent128_layer2_np2" \
+--latent_size=128 \
+--output_size=3 \
+--num_layer=2 \
+--num_processing_steps=2
+
+python3 main_check_model_sn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/SN/case7"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/SN/case8" \
+--load_model_path="a_result/ros_pnc2/SN/case7_latent128_layer2_np2/saved_model" \
+--log_dir="check_model/ros_pnc2/SN/case7_test8_latent128_layer2_np2" \
+--latent_size=128 \
+--output_size=3 \
+--num_layer=2 \
+--num_processing_steps=2
+
+python3 main_check_model_sn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/SN/case8"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/SN/case3" \
+--load_model_path="a_result/ros_pnc2/SN/case8_latent128_layer2_np2/saved_model" \
+--log_dir="check_model/ros_pnc2/SN/case8_test3_latent128_layer2_np2" \
+--latent_size=128 \
+--output_size=3 \
+--num_layer=2 \
+--num_processing_steps=2
+
+python3 main_check_model_sn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc2/SN/case8"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc2/SN/case6" \
+--load_model_path="a_result/ros_pnc2/SN/case8_latent128_layer2_np2/saved_model" \
+--log_dir="check_model/ros_pnc2/SN/case8_test6_latent128_layer2_np2" \
+--latent_size=128 \
+--output_size=3 \
+--num_layer=2 \
+--num_processing_steps=2

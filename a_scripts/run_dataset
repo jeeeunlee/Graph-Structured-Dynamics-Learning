@@ -1,0 +1,236 @@
+#!/bin/bash
+
+## additional test
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case5_2"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/FFNN/case5_2" 
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case5_3"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/FFNN/case5_3" 
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case5_2"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/SN/case5_2" 
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case5_3"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/SN/case5_3" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case5_2"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case5_2" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case5_3"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case5_3" 
+
+######################################################
+#                Typical GNN                         #
+######################################################
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/hexa_magneto/case1"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/TGN/case1" 
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/hexa_magneto/case2"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/TGN/case2" 
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/hexa_magneto/case3"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/TGN/case3" 
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/hexa_magneto/case4"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/TGN/case4" 
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/hexa_magneto/case5"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/TGN/case5" 
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/hexa_magneto/case5_2"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/TGN/case5_2" 
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/hexa_magneto/case5_3"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/TGN/case5_3" 
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/hexa_magneto/case6"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/TGN/case6" 
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/hexa_magneto/case7"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/TGN/case7" 
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/hexa_magneto/case8"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/TGN/case8" 
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/hexa_magneto/case9"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/TGN/case9" 
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/hexa_magneto/case10"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/TGN/case10" 
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/hexa_magneto/case11"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/TGN/case11" 
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/hexa_magneto/case12"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/TGN/case12" 
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/hexa_magneto/case13"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/TGN/case13" 
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/hexa_magneto/caseall"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/TGN/caseall" 
+
+
+######################################################
+#                       FFNN                         #
+######################################################
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case1"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/FFNN/case1" 
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case2"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/FFNN/case2" 
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case3"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/FFNN/case3" 
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case4"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/FFNN/case4" 
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case5"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/FFNN/case5" 
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case6"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/FFNN/case6" 
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case7"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/FFNN/case7" 
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case8"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/FFNN/case8" 
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case9"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/FFNN/case9" 
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case10"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/FFNN/case10" 
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case11"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/FFNN/case11" 
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case12"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/FFNN/case12" 
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case13"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/FFNN/case13" 
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/caseall"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/FFNN/caseall" 
+
+
+######################################################
+#                       SN                           #
+######################################################
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case1"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/SN/case1" 
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case2"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/SN/case2" 
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case3"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/SN/case3" 
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case4"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/SN/case4" 
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case5"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/SN/case5" 
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case6"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/SN/case6" 
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case7"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/SN/case7" 
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case8"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/SN/case8" 
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case9"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/SN/case9" 
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case10"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/SN/case10" 
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case11"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/SN/case11" 
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case12"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/SN/case12" 
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case13"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/SN/case13" 
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/caseall"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/SN/caseall" 
+
+
+######################################################
+#                       GNN                          #
+######################################################
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case1"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case1" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case2"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case2" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case3"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case3" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case4"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case4" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case5"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case5" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case6"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case6" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case7"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case7" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case8"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case8" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case9"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case9" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case10"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case10" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case11"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case11" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case12"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case12" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case13"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case13" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/caseall"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/caseall" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case5_2"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case5_2" 
+
+# python3 gn_inverse_dynamics/robot_graph_generator/hexamagneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/hexa_magneto/case5_3"  \
+# --dataset_dir="/a_dataset/tfData/hexa_magneto/GN/case5_3" 

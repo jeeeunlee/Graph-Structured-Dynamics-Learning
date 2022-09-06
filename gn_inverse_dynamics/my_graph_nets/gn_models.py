@@ -25,7 +25,7 @@ import sonnet as snt
 
 NUM_LAYERS = 2  # Hard-code number of layers in the edge/node/global models.
 EDGE_LATENT_SIZE_ = 64 #24 #48 #16  # Hard-code latent layer sizes for demos.
-NODE_LATENT_SIZE_ = 48 #48 #16
+NODE_LATENT_SIZE_ = 16 #48 #16
 GLOBAL_LATENT_SIZE_ = 16
 
 def make_mlp_model_edge():

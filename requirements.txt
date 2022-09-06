@@ -6,7 +6,7 @@ certifi==2021.5.30
 charset-normalizer==2.0.1
 cloudpickle==1.6.0
 dartpy==0.0.1.post11
-dataclasses==0.8
+# dataclasses==0.8
 decorator==4.4.2
 dm-sonnet==2.0.0
 dm-tree==0.1.6

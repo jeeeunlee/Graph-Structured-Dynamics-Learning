@@ -9,8 +9,6 @@ from gn_inverse_dynamics.robot_graph_generator.magneto.leg_edge_graph_generator.
 from gn_inverse_dynamics.robot_graph_generator.magneto.leg_edge_graph_generator.magneto_leg_graph_base import MagnetoLegGraphBase
 from gn_inverse_dynamics.robot_graph_generator.robot_graph import RobotGraph
 
-
-
 # 4 leg type
 def MagnetoLegEdgeGraph(urdf_fn):
     ## Rotation Invariant model

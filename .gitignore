@@ -15,15 +15,17 @@ octave-workspace
 *.tar.xz
 
 # Log folders 
-dataset/magneto/raw*
-dataset/magneto/tf*
-result_data
+a_dataset/tfData/*
+a_dataset/olddataset/*
+a_result/*
+z_old/*
 
 # simulator files
 gn_inverse_dynamics/robot_simulator/config/
 
 # venv
-venv/*
+venv*
+gn_inverse_dynamics/venv*
 
 # not used
 gn_inverse_dynamics/utils/pca.py

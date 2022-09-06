@@ -37,10 +37,10 @@ traj data generator --------> [ simulator ] --------> (next state)
 
 class InterfaceParams():
     def __init__(self):
-        self.save_dir = "result_data/checkmodel"
+        self.save_dir = "a_result/checkmodel"
         self.base_data_path = "gn_inverse_dynamics/robot_graph_generator/magneto/magneto_simple.urdf"
-        self.traj_data_dir = "dataset/magneto/rawData_icra/case6"
-        self.saved_model_path = "result_data/2021icra/case5_96_np3/saved_model"
+        self.traj_data_dir = "a_dataset/magneto/rawData_icra/case6"
+        self.saved_model_path = "a_result/2021icra/case5_96_np3/saved_model"
 
         self.num_processing_steps = 3
         self.edge_output_size = 3 

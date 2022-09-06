@@ -6,6 +6,9 @@ from urdfpy import URDF
 
 ##############################################
 
+def loadRobotURDF(fn):
+    return URDF.load(fn)
+
 def magneto_base_graph(fn):
   robot = loadRobotURDF(fn)
   # nodes (v_k : Link Information)
@@ -48,5 +51,7 @@ def magneto_base_graph(fn):
 ##############################################
 
 CURRENT_DIR_PATH = os.getcwd()
-urdf_path = os.path.join( CURRENT_DIR_PATH, 'robot_graph_generator/magneto/magneto_simple.urdf')
+# urdf_path = os.path.join( CURRENT_DIR_PATH, 'gn_inverse_dynamics/robot_graph_generator/magneto/magneto_simple.urdf')
+urdf_path = os.path.join( CURRENT_DIR_PATH, 'gn_inverse_dynamics/robot_graph_generator/magneto/magneto_2_floatingbase.urdf')
+
 magneto_base_graph(urdf_path)

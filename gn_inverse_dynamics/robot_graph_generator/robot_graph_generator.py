@@ -58,7 +58,10 @@ class RobotGraphDataSetGenerator():
     def gen_graph_dicts(self):
         # yield input_graph, target_graph
         for dynamic_graph, target_graph in self.dynamic_graph_generator.gen_dynamic_graph_dict():
-            input_graph = self.robot_graph_base.concat_graph([dynamic_graph, self.static_graph])            
+            if(hasattr(self, 'static_graph')):
+                input_graph = self.robot_graph_base.concat_graph([dynamic_graph, self.static_graph])            
+            else:
+                input_graph = dynamic_graph
             yield input_graph, target_graph
 
     def gen_graph_tuples(self):

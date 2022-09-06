@@ -101,9 +101,9 @@ class TrainModel():
         # Make log Directory
         self.save_every_seconds = 30 # = 5min
         if(args.log_dir == ''):
-            log_dir = os.path.join("result_data", get_local_time() )
+            log_dir = os.path.join("a_result", get_local_time() )
         else:
-            log_dir = os.path.join("result_data", args.log_dir)
+            log_dir = os.path.join("a_result", args.log_dir)
         log_dir_path = os.path.join(CURRENT_DIR_PATH, log_dir)
         create_folder(log_dir_path)
 
@@ -166,7 +166,7 @@ class TrainModel():
             self.valdataset_batch = None
         
     def _set_save_and_load_model(self, args):
-        # save model parameter Directory : result_data/xxxx(time)/saved_model        
+        # save model parameter Directory : a_result/xxxx(time)/saved_model        
         self.save_model_path = self.log_dir_path + args.save_model_path 
         print("saved model path  : {} ".format(self.log_dir_path))
         print("saved model path  : {} ".format(self.save_model_path))

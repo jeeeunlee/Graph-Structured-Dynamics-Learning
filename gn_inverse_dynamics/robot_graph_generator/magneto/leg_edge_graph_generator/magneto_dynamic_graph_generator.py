@@ -25,11 +25,12 @@ from gn_inverse_dynamics.robot_graph_generator.magneto.leg_edge_graph_generator.
 
 # BASE GRAPH GENERATOR - common functions
 class MagnetoLegDynamicGraphGenerator(DynamicGraphGenerator):
-    def __init__(self, traj_data_path, pass_param=None):
+    def __init__(self, traj_data_path, leg_configs, pass_param=None):
         myutils.log_with_time("MagnetoLegDynamicGraphGenerator")
         self.robot_graph_base = MagnetoLegGraphBase()
         self.set_traj_folders(traj_data_path)
         self.data_size = 0
+        self.leg_configs = leg_configs
 
         if(pass_param):
             self.init_traj_pass_threshold = pass_param.init_traj_pass_threshold
@@ -96,38 +97,38 @@ class MagnetoLegDynamicGraphGenerator(DynamicGraphGenerator):
         # q, q_des, dotq, dotq_des, trq, contact_al, f_mag_al, base_ori
         f_q = open(file_path + "/q_sen.txt")
         f_dq = open(file_path + "/qdot_sen.txt")
-        f_q_d = open(file_path + "/q_des.txt")
-        f_dq_d = open(file_path + "/qdot_des.txt")        
+        # f_q_d = open(file_path + "/q_des.txt")
+        # f_dq_d = open(file_path + "/qdot_des.txt")   
+        f_q_d = open(file_path + "/q_sen.txt")
+        f_dq_d = open(file_path + "/qdot_sen.txt")
+        next(f_q_d)
+        next(f_dq_d)      
         f_trq = open(file_path + "/trq.txt")
 
-        f_mag_al = open(file_path + "/magnetic_onoff_AL_foot_link.txt")
-        f_mag_ar = open(file_path + "/magnetic_onoff_AR_foot_link.txt")
-        f_mag_bl = open(file_path + "/magnetic_onoff_BL_foot_link.txt")
-        f_mag_br = open(file_path + "/magnetic_onoff_BR_foot_link.txt")
+        f_mag_al = open(file_path + "/AL_mag_onoff.txt")
+        f_mag_ar = open(file_path + "/AR_mag_onoff.txt")
+        f_mag_bl = open(file_path + "/BL_mag_onoff.txt")
+        f_mag_br = open(file_path + "/BR_mag_onoff.txt")
 
-        f_ct_al = open(file_path + "/contact_onoff_AL_foot_link.txt")
-        f_ct_ar = open(file_path + "/contact_onoff_AR_foot_link.txt")
-        f_ct_bl = open(file_path + "/contact_onoff_BL_foot_link.txt")
-        f_ct_br = open(file_path + "/contact_onoff_BR_foot_link.txt")
+        f_ct_al = open(file_path + "/AL_contact_onoff.txt")
+        f_ct_ar = open(file_path + "/AR_contact_onoff.txt")
+        f_ct_bl = open(file_path + "/BL_contact_onoff.txt")
+        f_ct_br = open(file_path + "/BR_contact_onoff.txt")
 
-        f_pos_al = open(file_path + "/pos_al.txt")
-        f_pos_ar = open(file_path + "/pos_ar.txt")
-        f_pos_bl = open(file_path + "/pos_bl.txt")
-        f_pos_br = open(file_path + "/pos_br.txt")
-        f_pos_base = open(file_path + "/pose_base.txt")
+        f_base_body_vel = open(file_path + "/base_body_vel.txt")
 
         traj_file_zip_key = ['q', 'q_des', 'dq', 'dq_des', 'trq',
-                        'f_mag_al', 'f_mag_ar', 'f_mag_bl', 'f_mag_br',
-                        'f_ct_al', 'f_ct_ar', 'f_ct_bl', 'f_ct_br',
-                        'pos_al', 'pos_ar', 'pos_bl', 'pos_br', 'pos_base']
-        traj_file_list = [f_q, f_q_d, f_dq, f_dq_d, f_trq,  
+                        'mag_al', 'mag_ar', 'mag_bl', 'mag_br',
+                        'ct_al', 'ct_ar', 'ct_bl', 'ct_br',
+                        'base_body_vel']
+        traj_file_list = [f_q, f_q_d, f_dq, f_dq_d, f_trq,
                         f_mag_al, f_mag_ar, f_mag_bl, f_mag_br,
                         f_ct_al, f_ct_ar, f_ct_bl, f_ct_br,
-                        f_pos_al, f_pos_ar, f_pos_bl, f_pos_br, f_pos_base]
+                        f_base_body_vel]
         traj_file_zip = zip(f_q, f_q_d, f_dq, f_dq_d, f_trq,  
                         f_mag_al, f_mag_ar, f_mag_bl, f_mag_br,
-                        f_ct_al, f_ct_ar, f_ct_bl, f_ct_br,
-                        f_pos_al, f_pos_ar, f_pos_bl, f_pos_br, f_pos_base) 
+                        f_ct_al, f_ct_ar, f_ct_bl, f_ct_br ,
+                        f_base_body_vel)
 
         return traj_file_zip, traj_file_zip_key, traj_file_list
 
@@ -149,20 +150,20 @@ class MagnetoLegDynamicGraphGenerator(DynamicGraphGenerator):
         dyn_nodes=[]
         for linkname in MagnetoLegGraph.MagnetoGraphNode:
             if(linkname =='AR'):
-                f_magnetic_onoff = traj_dict['f_mag_ar'][0]
-                f_contact_onoff = traj_dict['f_ct_ar'][0]
+                f_magnetic_onoff = traj_dict['mag_ar'][0]
+                f_contact_onoff = traj_dict['ct_ar'][0]
                 data = [ f_magnetic_onoff,  f_contact_onoff]
             elif(linkname =='BR'):
-                f_magnetic_onoff = traj_dict['f_mag_br'][0]
-                f_contact_onoff = traj_dict['f_ct_br'][0]
+                f_magnetic_onoff = traj_dict['mag_br'][0]
+                f_contact_onoff = traj_dict['ct_br'][0]
                 data = [ f_magnetic_onoff,  f_contact_onoff]
             elif(linkname =='AL'):
-                f_magnetic_onoff = traj_dict['f_mag_al'][0]
-                f_contact_onoff = traj_dict['f_ct_al'][0]
+                f_magnetic_onoff = traj_dict['mag_al'][0]
+                f_contact_onoff = traj_dict['ct_al'][0]
                 data = [ f_magnetic_onoff,  f_contact_onoff]
             elif(linkname =='BL'):
-                f_magnetic_onoff = traj_dict['f_mag_bl'][0]
-                f_contact_onoff = traj_dict['f_ct_bl'][0]
+                f_magnetic_onoff = traj_dict['mag_bl'][0]
+                f_contact_onoff = traj_dict['ct_bl'][0]
                 data = [ f_magnetic_onoff,  f_contact_onoff]
             else:
                 data = [ 0.0, 0.0 ]
@@ -172,30 +173,32 @@ class MagnetoLegDynamicGraphGenerator(DynamicGraphGenerator):
     def compute_edges(self, traj_dict):
         dyn_edges=[]
         target_edges=[]
+
+        # grabity in base link frame
+        RZYX = traj_dict['q'][3:6] #RAD
+        R_wb = mymath.zyx_to_rot(RZYX)
+        R_bw = mymath.inv_R(R_wb)
+        gw = [0.,0.,-9.8]
+        gb = np.matmul(R_bw, gw).tolist()
+        base_vel = traj_dict['base_body_vel']
+
         for legname in MagnetoLegGraph.MagnetoGraphEdge:
             leg_data = list()
             leg_trq = list()
             # joint info
+            leg_data.extend( np.matmul(self.leg_configs[legname].R_ib, gb).tolist() ) # 3
+            leg_data.extend( np.matmul(self.leg_configs[legname].AdT_ib, base_vel).tolist() ) # 6
+
             for legjointname in ['coxa', 'femur', 'tibia']:
                 jointname = "{}_{}_joint".format(legname, legjointname)
-                leg_data.append(traj_dict['q'][ Magneto.MagnetoJoint[jointname] ])
-                leg_data.append(traj_dict['dq'][ Magneto.MagnetoJoint[jointname] ])
+                
+                leg_data.append(traj_dict['q'][ Magneto.MagnetoJoint[jointname] ]) # 3
+                leg_data.append(traj_dict['dq'][ Magneto.MagnetoJoint[jointname] ]) # 3
                 if('q_des' in traj_dict):
-                    leg_data.append(traj_dict['q_des'][ Magneto.MagnetoJoint[jointname] ])
-                    leg_data.append(traj_dict['dq_des'][ Magneto.MagnetoJoint[jointname] ])                
-                leg_trq.append( traj_dict['trq'][ Magneto.MagnetoJoint[jointname] ] )
-            # height info
-            if(legname=='AL'):
-                dz = traj_dict['pos_al'][2] - traj_dict['pos_base'][2]
-            elif(legname=='BL'):
-                dz = traj_dict['pos_bl'][2] - traj_dict['pos_base'][2]
-            elif(legname=='AR'):
-                dz = traj_dict['pos_ar'][2] - traj_dict['pos_base'][2]
-            elif(legname=='BR'):
-                dz = traj_dict['pos_br'][2] - traj_dict['pos_base'][2]
-            else:
-                dz = 0
-            leg_data.append(dz)
+                    leg_data.append(traj_dict['q_des'][ Magneto.MagnetoJoint[jointname] ]) # 3
+                    leg_data.append(traj_dict['dq_des'][ Magneto.MagnetoJoint[jointname] ]) # 3          
+                
+                leg_trq.append( traj_dict['trq'][ Magneto.MagnetoJoint[jointname] ] ) #3
 
             dyn_edges.append( leg_data )
             target_edges.append( leg_trq )
@@ -204,13 +207,7 @@ class MagnetoLegDynamicGraphGenerator(DynamicGraphGenerator):
 
 
     def compute_globals(self, traj_dict):
-        dyn_globals=[]
-        # grabity in base link frame
-        RZYX = traj_dict['q'][3:6] #RAD
-        R_wb = mymath.zyx_to_rot(RZYX)
-        R_bw = mymath.inv_R(R_wb)
-        gw = [0.,0.,-9.8]
-        gb = np.matmul(R_bw, gw).tolist()
-        dyn_globals.extend(gb)
+        dyn_globals=[0]
+
         return dyn_globals
 

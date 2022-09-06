@@ -1,0 +1,21 @@
+walkset_xx_yy: 
+xx(initial robot configuration), yy(motion_script)
+
+case1: rx_left
+case2: rx_right
+case3: ry
+case4: 0_0
+case5: 60_60
+case6: 60_60~300_300
+
+xx_xx
+case7: random 6 (1/3)
+case8: random 9 (1/2)
+case9: random 12 (2/3)
+case10: all 18
+
+0_xx
+cas11: random 6 (1/3)
+case12: random 12 (2/3)
+case13: all 18
+

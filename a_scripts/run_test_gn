@@ -1,0 +1,133 @@
+#!/bin/bash
+
+######################################################
+#                       train                        #
+######################################################
+
+python3 main_train_model.py --dataset_path="a_dataset/tfData/ros_pnc/gnn/caseall"  \
+--error_model="torque" --log_dir="ros_pnc/gnn/caseall_edge64_np2" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+python3 main_train_model.py --dataset_path="a_dataset/tfData/ros_pnc/gnn/case1"  \
+--error_model="torque" --log_dir="ros_pnc/gnn/case1_edge64_np2" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+python3 main_train_model.py --dataset_path="a_dataset/tfData/ros_pnc/gnn/case2"  \
+--error_model="torque" --log_dir="ros_pnc/gnn/case2_edge64_np2" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+python3 main_train_model.py --dataset_path="a_dataset/tfData/ros_pnc/gnn/case3"  \
+--error_model="torque" --log_dir="ros_pnc/gnn/case3_edge64_np2" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+python3 main_train_model.py --dataset_path="a_dataset/tfData/ros_pnc/gnn/case4"  \
+--error_model="torque" --log_dir="ros_pnc/gnn/case4_edge64_np2" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+python3 main_train_model.py --dataset_path="a_dataset/tfData/ros_pnc/gnn/case5"  \
+--error_model="torque" --log_dir="ros_pnc/gnn/case5_edge64_np2" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+python3 main_train_model.py --dataset_path="a_dataset/tfData/ros_pnc/gnn/case6"  \
+--error_model="torque" --log_dir="ros_pnc/gnn/case6_edge64_np2" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+python3 main_train_model.py --dataset_path="a_dataset/tfData/ros_pnc/gnn/case7"  \
+--error_model="torque" --log_dir="ros_pnc/gnn/case7_edge64_np2" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=400 --num_processing_steps=2 --edge_latent_size=64 --edge_output_size=3
+
+######################################################
+#                       validation                   #
+######################################################
+
+python3 main_check_model.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc/gnn/case1"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc/gnn/case2" \
+--load_model_path="a_result/ros_pnc/gnn/case1_edge64_np2/saved_model" \
+--log_dir="check_model/ros_pnc/gnn/case1_test2_edge64_np2" \
+--num_processing_steps=2 \
+--edge_latent_size=64 \
+--edge_output_size=3
+
+python3 main_check_model.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc/gnn/case1"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc/gnn/case3" \
+--load_model_path="a_result/ros_pnc/gnn/case1_edge64_np2/saved_model" \
+--log_dir="check_model/ros_pnc/gnn/case1_test3_edge64_np2" \
+--num_processing_steps=2 \
+--edge_latent_size=64 \
+--edge_output_size=3
+
+python3 main_check_model.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc/gnn/case1"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc/gnn/case4" \
+--load_model_path="a_result/ros_pnc/gnn/case1_edge64_np2/saved_model" \
+--log_dir="check_model/ros_pnc/gnn/case1_test4_edge64_np2" \
+--num_processing_steps=2 \
+--edge_latent_size=64 \
+--edge_output_size=3
+
+python3 main_check_model.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc/gnn/case1"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc/gnn/case2" \
+--load_model_path="a_result/ros_pnc/gnn/caseall_edge64_np2/saved_model" \
+--log_dir="check_model/ros_pnc/gnn/caseall_test12_edge64_np2" \
+--num_processing_steps=2 \
+--edge_latent_size=64 \
+--edge_output_size=3
+
+
+python3 main_check_model.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc/gnn/case2"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc/gnn/case1" \
+--load_model_path="a_result/ros_pnc/gnn/case2_edge64_np2/saved_model" \
+--log_dir="check_model/ros_pnc/gnn/case2_test1_edge64_np2" \
+--num_processing_steps=2 \
+--edge_latent_size=64 \
+--edge_output_size=3
+
+python3 main_check_model.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc/gnn/case2"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc/gnn/case3" \
+--load_model_path="a_result/ros_pnc/gnn/case2_edge64_np2/saved_model" \
+--log_dir="check_model/ros_pnc/gnn/case2_test3_edge64_np2" \
+--num_processing_steps=2 \
+--edge_latent_size=64 \
+--edge_output_size=3
+
+
+python3 main_check_model.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc/gnn/case5"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc/gnn/caseall" \
+--load_model_path="a_result/ros_pnc/gnn/case5_edge64_np2/saved_model" \
+--log_dir="check_model/ros_pnc/gnn/case5_testall_edge64_np2" \
+--num_processing_steps=2 \
+--edge_latent_size=64 \
+--edge_output_size=3
+
+python3 main_check_model.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc/gnn/case6"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc/gnn/caseall" \
+--load_model_path="a_result/ros_pnc/gnn/case6_edge64_np2/saved_model" \
+--log_dir="check_model/ros_pnc/gnn/case6_testall_edge64_np2" \
+--num_processing_steps=2 \
+--edge_latent_size=64 \
+--edge_output_size=3
+
+python3 main_check_model.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/ros_pnc/gnn/case7"  \
+--test_dataset_path="a_dataset/tfData/ros_pnc/gnn/caseall" \
+--load_model_path="a_result/ros_pnc/gnn/case7_edge64_np2/saved_model" \
+--log_dir="check_model/ros_pnc/gnn/case7_testall_edge64_np2" \
+--num_processing_steps=2 \
+--edge_latent_size=64 \
+--edge_output_size=3
