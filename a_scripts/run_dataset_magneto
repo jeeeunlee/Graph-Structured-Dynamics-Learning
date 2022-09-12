@@ -1,0 +1,45 @@
+#!/bin/bash
+
+## additional test
+
+# python3 ffnn_inverse_dynamics/magneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/magneto/case1"  \
+# --dataset_dir="/a_dataset/tfData/magneto/FFNN/case1" 
+
+# python3 ffnn_inverse_dynamics/magneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/magneto/case2"  \
+# --dataset_dir="/a_dataset/tfData/magneto/FFNN/case2" 
+
+python3 ffnn_inverse_dynamics/magneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/magneto/case3"  \
+--dataset_dir="/a_dataset/tfData/magneto/FFNN/case3" 
+
+# python3 ffnn_inverse_dynamics/magneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/magneto/caseall"  \
+# --dataset_dir="/a_dataset/tfData/magneto/FFNN/caseall" 
+
+# python3 sn_inverse_dynamics/magneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/magneto/case1"  \
+# --dataset_dir="/a_dataset/tfData/magneto/SN/case1" 
+
+# python3 sn_inverse_dynamics/magneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/magneto/case2"  \
+# --dataset_dir="/a_dataset/tfData/magneto/SN/case2" 
+
+python3 sn_inverse_dynamics/magneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/magneto/case3"  \
+--dataset_dir="/a_dataset/tfData/magneto/SN/case3" 
+
+# python3 sn_inverse_dynamics/magneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/magneto/caseall"  \
+# --dataset_dir="/a_dataset/tfData/magneto/SN/caseall" 
+
+
+######################################################
+#                Typical GNN                         #
+######################################################
+
+
+# python3 typical_gnn_inverse_dynamics/robot_graph_generator/magneto/main_make_dataset_gn.py \
+# --raw_data_dir="/a_dataset/rawData/magneto/caseall"  \
+# --dataset_dir="/a_dataset/tfData/magneto/TGN/caseall" 
+
+
+######################################################
+#                       GNN                          #
+######################################################
+
+# python3 gn_inverse_dynamics/robot_graph_generator/magneto/main_make_dataset_gn.py --raw_data_dir="/a_dataset/rawData/magneto/case1"  \
+# --dataset_dir="/a_dataset/tfData/magneto/GN/case1" 

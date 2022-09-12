@@ -38,8 +38,8 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--raw_data_dir", type=str, default="/a_dataset/rawData/hexa_magneto/caseall")
-    parser.add_argument("--dataset_dir", type=str, default="/a_dataset/tfData/hexa_magneto/FFNN/caseall")
+    parser.add_argument("--raw_data_dir", type=str, default="/a_dataset/rawData/nona_magneto/test")
+    parser.add_argument("--dataset_dir", type=str, default="/a_dataset/tfData/nona_magneto/FFNN/test")
     parser.add_argument("--dataset_size", type=int, default=None)
     parser.add_argument("--split_data", type=bool, default=True)
     parser.add_argument("--train_ratio", type=float, default=0.9)

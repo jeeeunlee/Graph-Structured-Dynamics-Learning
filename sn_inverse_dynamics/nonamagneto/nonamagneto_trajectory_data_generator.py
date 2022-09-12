@@ -13,9 +13,10 @@ from gn_inverse_dynamics.utils import mymath as mymath
 from gn_inverse_dynamics.robot_graph_generator.load_data_from_urdf import *
 
 class NonaMagnetoJointTrajDataGenerator():
-    def __init__(self, traj_data_path, pass_param=None):
+    def __init__(self, traj_data_path, leg_configs, pass_param=None):
         myutils.log_with_time("NonaMagnetoJointTrajDataGenerator")
         self.set_traj_folders(traj_data_path)
+        self.leg_configs = leg_configs
         self.data_size = 0
         if(pass_param):
             self.init_traj_pass_threshold = pass_param.init_traj_pass_threshold
@@ -36,47 +37,48 @@ class NonaMagnetoJointTrajDataGenerator():
             yield inputdata, targetdata
 
     def traj_dict_to_data_list(self, traj_dict):
-        inputdata = list()
-        targetdata = list()
+        inputdatalist = list()
+        targetdatalist = list()
 
         # grabity in base link frame
         # RZYX = traj_dict['q'][3:6] #RAD
         # R_wb = mymath.zyx_to_rot(RZYX)
         # R_bw = mymath.inv_R(R_wb)
-        # gw = [0.,0.,-9.8]
-        # gb = np.matmul(R_bw, gw).tolist()
-        # inputdata.extend(gb)
-        baseconfig = traj_dict['q'][3:6]
-        inputdata.extend(baseconfig)
-        inputdata.extend(traj_dict['base_body_vel'][0:3])
-
-        inputdata.append( traj_dict['mag_al'][0] )
-        inputdata.append( traj_dict['ct_al'][0] )
-        inputdata.append( traj_dict['mag_ar'][0] )
-        inputdata.append( traj_dict['ct_ar'][0] )
-
-        inputdata.append( traj_dict['mag_bl'][0] )
-        inputdata.append( traj_dict['ct_bl'][0] )
-        inputdata.append( traj_dict['mag_br'][0] )
-        inputdata.append( traj_dict['ct_br'][0] )  
-              
-        inputdata.append( traj_dict['mag_cl'][0] )
-        inputdata.append( traj_dict['ct_cl'][0] )
-        inputdata.append( traj_dict['mag_cr'][0] )
-        inputdata.append( traj_dict['ct_cr'][0] )
+        quat = traj_dict['rot_base'] #RAD
+        R_wb = mymath.quat_to_rot(quat)
+        R_bw = mymath.inv_R(R_wb)
+        gw = [0.,0.,-9.8]
+        gb = np.matmul(R_bw, gw).tolist()
+        wb = traj_dict['base_body_vel'][0:3]
 
         for legname in NonaMagnetoLegGraph.NonaMagnetoGraphEdge:
+            leg_data = list()
+            leg_trq = list()
+
+            # joint info
+            leg_data.extend( np.matmul(self.leg_configs[legname].R_ib, gb).tolist() ) # 3
+            leg_data.extend( np.matmul(self.leg_configs[legname].R_ib, wb).tolist() ) # 3   
+            leg_data.extend( self.leg_configs[legname].p_ib ) # 3
+            # leg_data.extend( np.matmul(self.leg_configs[legname].AdT_ib, base_vel).tolist() ) # 6
+
+            magdataname = "mag_{}".format(legname.lower())
+            cnctdataname = "ct_{}".format(legname.lower())
+            leg_data.append( traj_dict[magdataname][0] )
+            leg_data.append( traj_dict[cnctdataname][0] )
+            
             for legjointname in ['coxa', 'femur', 'tibia']:
                 jointname = "{}_{}_joint".format(legname, legjointname)
-
-                inputdata.append(traj_dict['q'][ NonaMagneto.NonaMagnetoJoint[jointname] ]) # 3
-                inputdata.append(traj_dict['dq'][ NonaMagneto.NonaMagnetoJoint[jointname] ]) # 3
+                leg_data.append(traj_dict['q'][ NonaMagneto.NonaMagnetoJoint[jointname] ]) # 3
+                leg_data.append(traj_dict['dq'][ NonaMagneto.NonaMagnetoJoint[jointname] ]) # 3
                 if('q_des' in traj_dict):
-                    inputdata.append(traj_dict['q_des'][ NonaMagneto.NonaMagnetoJoint[jointname] ]) # 3
-                    inputdata.append(traj_dict['dq_des'][ NonaMagneto.NonaMagnetoJoint[jointname] ]) # 3                     
-                targetdata.append( traj_dict['trq'][ NonaMagneto.NonaMagnetoJoint[jointname] ] )
+                    leg_data.append(traj_dict['q_des'][ NonaMagneto.NonaMagnetoJoint[jointname] ]) # 3
+                    leg_data.append(traj_dict['dq_des'][ NonaMagneto.NonaMagnetoJoint[jointname] ]) # 3                     
+                leg_trq.append( traj_dict['trq'][ NonaMagneto.NonaMagnetoJoint[jointname] ] )
 
-        return inputdata, targetdata
+            inputdatalist.append( leg_data )
+            targetdatalist.append( leg_trq )
+            
+        return inputdatalist, targetdatalist
 
 
     def set_traj_folders(self, traj_data_dir):
@@ -91,6 +93,7 @@ class NonaMagnetoJointTrajDataGenerator():
             traj_pass_threshold=self.traj_pass_threshold
 
         self.data_size = 0
+
         for raw_traj_folder in self.traj_folders:
             traj_file_zip, traj_file_zip_key, _ = self.get_trajectory_files( self.traj_data_dir + '/' + raw_traj_folder )            
             i=0
@@ -127,38 +130,45 @@ class NonaMagnetoJointTrajDataGenerator():
         f_q_d = open(file_path + "/q_sen.txt")
         f_dq_d = open(file_path + "/qdot_sen.txt")
         next(f_q_d)
-        next(f_dq_d)      
+        next(f_dq_d)
         f_trq = open(file_path + "/trq.txt")
         f_rotbase = open(file_path + "/rot_base.txt")
 
-        f_mag_al = open(file_path + "/AL_mag_onoff.txt")
-        f_mag_ar = open(file_path + "/AR_mag_onoff.txt")
-        f_mag_bl = open(file_path + "/BL_mag_onoff.txt")
-        f_mag_br = open(file_path + "/BR_mag_onoff.txt")
-        f_mag_cl = open(file_path + "/CL_mag_onoff.txt")
-        f_mag_cr = open(file_path + "/CR_mag_onoff.txt")
+        f_mag_a1 = open(file_path + "/A1_mag_onoff.txt")
+        f_mag_a2 = open(file_path + "/A2_mag_onoff.txt")
+        f_mag_a3 = open(file_path + "/A3_mag_onoff.txt")
+        f_mag_a4 = open(file_path + "/A4_mag_onoff.txt")
+        f_mag_a5 = open(file_path + "/A5_mag_onoff.txt")
+        f_mag_a6 = open(file_path + "/A6_mag_onoff.txt")
+        f_mag_a7 = open(file_path + "/A7_mag_onoff.txt")
+        f_mag_a8 = open(file_path + "/A8_mag_onoff.txt")
+        f_mag_a9 = open(file_path + "/A9_mag_onoff.txt")
 
-        f_ct_al = open(file_path + "/AL_contact_onoff.txt")
-        f_ct_ar = open(file_path + "/AR_contact_onoff.txt")
-        f_ct_bl = open(file_path + "/BL_contact_onoff.txt")
-        f_ct_br = open(file_path + "/BR_contact_onoff.txt")
-        f_ct_cl = open(file_path + "/CL_contact_onoff.txt")
-        f_ct_cr = open(file_path + "/CR_contact_onoff.txt")
+        f_ct_a1 = open(file_path + "/A1_contact_onoff.txt")
+        f_ct_a2 = open(file_path + "/A2_contact_onoff.txt")
+        f_ct_a3 = open(file_path + "/A3_contact_onoff.txt")
+        f_ct_a4 = open(file_path + "/A4_contact_onoff.txt")
+        f_ct_a5 = open(file_path + "/A5_contact_onoff.txt")
+        f_ct_a6 = open(file_path + "/A6_contact_onoff.txt")
+        f_ct_a7 = open(file_path + "/A7_contact_onoff.txt")
+        f_ct_a8 = open(file_path + "/A8_contact_onoff.txt")
+        f_ct_a9 = open(file_path + "/A9_contact_onoff.txt")
+
 
         f_base_body_vel = open(file_path + "/base_body_vel.txt")
 
         traj_file_zip_key = ['q', 'q_des', 'dq', 'dq_des', 'trq',
-                        'mag_al', 'mag_ar', 'mag_bl', 'mag_br', 'mag_cl', 'mag_cr',
-                        'ct_al', 'ct_ar', 'ct_bl', 'ct_br', 'ct_cl', 'ct_cr',
-                        'base_body_vel', 'rot_base']
+            'mag_a1', 'mag_a2', 'mag_a3', 'mag_a4', 'mag_a5', 'mag_a6', 'mag_a7', 'mag_a8', 'mag_a9',
+            'ct_a1', 'ct_a2', 'ct_a3', 'ct_a4','ct_a5','ct_a6','ct_a7', 'ct_a8', 'ct_a9', 
+            'base_body_vel', 'rot_base']
         traj_file_list = [f_q, f_q_d, f_dq, f_dq_d, f_trq,
-                        f_mag_al, f_mag_ar, f_mag_bl, f_mag_br, f_mag_cl, f_mag_cr,
-                        f_ct_al, f_ct_ar, f_ct_bl, f_ct_br,f_ct_cl,f_ct_cr,
-                        f_base_body_vel, f_rotbase]
+            f_mag_a1, f_mag_a2, f_mag_a3, f_mag_a4, f_mag_a5, f_mag_a6, f_mag_a7, f_mag_a8, f_mag_a9,  
+            f_ct_a1, f_ct_a2, f_ct_a3, f_ct_a4, f_ct_a5, f_ct_a6, f_ct_a7, f_ct_a8, f_ct_a9,
+            f_base_body_vel, f_rotbase]
         traj_file_zip = zip(f_q, f_q_d, f_dq, f_dq_d, f_trq,  
-                        f_mag_al, f_mag_ar, f_mag_bl, f_mag_br, f_mag_cl, f_mag_cr,
-                        f_ct_al, f_ct_ar, f_ct_bl, f_ct_br, f_ct_cl,f_ct_cr,
-                        f_base_body_vel, f_rotbase)
+            f_mag_a1, f_mag_a2, f_mag_a3, f_mag_a4, f_mag_a5, f_mag_a6, f_mag_a7, f_mag_a8, f_mag_a9,  
+            f_ct_a1, f_ct_a2, f_ct_a3, f_ct_a4, f_ct_a5, f_ct_a6, f_ct_a7, f_ct_a8, f_ct_a9,
+            f_base_body_vel, f_rotbase)
 
         return traj_file_zip, traj_file_zip_key, traj_file_list
     

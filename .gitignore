@@ -15,6 +15,7 @@ octave-workspace
 *.tar.xz
 
 # Log folders 
+a_dataset/*
 a_dataset/tfData/*
 a_dataset/olddataset/*
 a_result/*

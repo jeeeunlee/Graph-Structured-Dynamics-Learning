@@ -9,11 +9,11 @@ from urdfpy import URDF
 def loadRobotURDF(fn):
     return URDF.load(fn)
 
-def hexamagneto_base_graph(fn):
+def nonamagneto_base_graph(fn):
   robot = loadRobotURDF(fn)
   # nodes (v_k : Link Information)
   # mass, inertia, pos, ori
-  FootNames = ['base_link','AR','BR','CR','CL','BL','AL']
+  FootNames = ['base_link','A1','A2','A3','A4','A5','A6','A7','A8','A9']
   links = {}
   link_idx = 0
   
@@ -51,7 +51,7 @@ def hexamagneto_base_graph(fn):
 ##############################################
 
 CURRENT_DIR_PATH = os.getcwd()
-# urdf_path = os.path.join( CURRENT_DIR_PATH, 'gn_inverse_dynamics/robot_graph_generator/hexamagneto/hexamagneto_simple.urdf')
-urdf_path = os.path.join( CURRENT_DIR_PATH, 'gn_inverse_dynamics/robot_graph_generator/hexamagneto/hexamagneto_2_floatingbase.urdf')
+# urdf_path = os.path.join( CURRENT_DIR_PATH, 'gn_inverse_dynamics/robot_graph_generator/nonamagneto/nonamagneto_simple.urdf')
+urdf_path = os.path.join( CURRENT_DIR_PATH, 'gn_inverse_dynamics/robot_graph_generator/nonamagneto/magneto_nona.urdf')
 
-hexamagneto_base_graph(urdf_path)
+nonamagneto_base_graph(urdf_path)

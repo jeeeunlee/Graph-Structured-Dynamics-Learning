@@ -1,0 +1,66 @@
+#!/bin/bash
+
+## SN
+
+######################################################
+#                       dataset                      #
+######################################################
+
+# python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/nona_magneto/test"  \
+# --dataset_dir="/a_dataset/tfData/nona_magneto/SN/test" 
+
+######################################################
+#                       train                        #
+######################################################
+
+# python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/nona_magneto/SN/test"  \
+# --error_model="torque" --log_dir="nona_magneto/SN/test_latent128_layer2_np2" --save_model_path="/saved_model" \
+# --learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+######################################################
+#                       validation                   #
+######################################################
+
+# python3 main_check_model_sn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/nona_magneto/SN/test"  \
+# --test_dataset_path="a_dataset/tfData/nona_magneto/SN/test" \
+# --load_model_path="a_result/nona_magneto/SN/test_latent128_layer2_np2/saved_model" \
+# --log_dir="check_model/nona_magneto/SN/test_testall_latent128_layer2_np2" \
+# --latent_size=128 \
+# --output_size=3 \
+# --num_layer=2 \
+# --num_processing_steps=2
+
+
+## FFNN
+
+######################################################
+#                       dataset                      #
+######################################################
+
+# python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/nona_magneto/test"  \
+# --dataset_dir="/a_dataset/tfData/nona_magneto/FFNN/test" 
+
+
+######################################################
+#                       train                        #
+######################################################
+
+# python3 main_train_model_ffnn.py --dataset_path="a_dataset/tfData/nona_magneto/FFNN/test"  \
+# --error_model="torque" --log_dir="nona_magneto/FFNN/test_latent256_layer3" --save_model_path="/saved_model" \
+# --learning_rate=1e-3 --batch_size=64 --epoch_size=300 --latent_size=256 --output_size=27 --num_layer=3
+
+######################################################
+#                       validation                   #
+######################################################
+
+# python3 main_check_model_ffnn.py \
+# --batch_size=64 \
+# --dataset_path="a_dataset/tfData/nona_magneto/FFNN/test"  \
+# --test_dataset_path="a_dataset/tfData/nona_magneto/FFNN/test" \
+# --load_model_path="a_result/nona_magneto/FFNN/test_latent256_layer3/saved_model" \
+# --log_dir="check_model/nona_magneto/FFNN/test_latent256_layer3" \
+# --latent_size=256 \
+# --output_size=27 \
+# --num_layer=3

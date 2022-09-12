@@ -1,0 +1,107 @@
+#!/bin/bash
+
+# additional test
+
+
+######################################################
+#                       Training                         #
+######################################################
+
+python3 main_train_model_ffnn.py --dataset_path="a_dataset/tfData/hexa_magneto2/FFNN/case1"  \
+--error_model="torque" --log_dir="hexa_magneto2/FFNN/case1_latent256_layer3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=300 --latent_size=256 --output_size=18 --num_layer=3
+
+python3 main_train_model_ffnn.py --dataset_path="a_dataset/tfData/hexa_magneto2/FFNN/case2"  \
+--error_model="torque" --log_dir="hexa_magneto2/FFNN/case2_latent256_layer3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=300 --latent_size=256 --output_size=18 --num_layer=3
+
+python3 main_train_model_ffnn.py --dataset_path="a_dataset/tfData/hexa_magneto2/FFNN/case3"  \
+--error_model="torque" --log_dir="hexa_magneto2/FFNN/case3_latent256_layer3" --save_model_path="/saved_model" \
+--learning_rate=1e-3 --batch_size=64 --epoch_size=300 --latent_size=256 --output_size=18 --num_layer=3
+
+
+#######################
+
+python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto2/SN/case1"  \
+--error_model="torque" --log_dir="hexa_magneto2/SN/case1_latent128_layer2_np2" --save_model_path="/saved_model" \
+--learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto2/SN/case2"  \
+--error_model="torque" --log_dir="hexa_magneto2/SN/case2_latent128_layer2_np2" --save_model_path="/saved_model" \
+--learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+python3 main_train_model_sn.py --dataset_path="a_dataset/tfData/hexa_magneto2/SN/case3"  \
+--error_model="torque" --log_dir="hexa_magneto2/SN/case3_latent128_layer2_np2" --save_model_path="/saved_model" \
+--learning_rate=5e-4 --batch_size=64 --epoch_size=300 --latent_size=128 --output_size=3 --num_layer=2 --num_processing_steps=2
+
+
+######################################################
+#                       validation                   #
+######################################################
+
+
+python3 main_check_model_ffnn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/hexa_magneto2/FFNN/case1"  \
+--test_dataset_path="a_dataset/tfData/hexa_magneto2/FFNN/caseall" \
+--load_model_path="a_result/hexa_magneto2/FFNN/case1_latent256_layer3/saved_model" \
+--log_dir="check_model/hexa_magneto2/FFNN/case1_testall_latent256_layer3" \
+--latent_size=256 \
+--output_size=18 \
+--num_layer=3
+
+python3 main_check_model_ffnn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/hexa_magneto2/FFNN/case2"  \
+--test_dataset_path="a_dataset/tfData/hexa_magneto2/FFNN/caseall" \
+--load_model_path="a_result/hexa_magneto2/FFNN/case2_latent256_layer3/saved_model" \
+--log_dir="check_model/hexa_magneto2/FFNN/case2_testall_latent256_layer3" \
+--latent_size=256 \
+--output_size=18 \
+--num_layer=3
+
+python3 main_check_model_ffnn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/hexa_magneto2/FFNN/case3"  \
+--test_dataset_path="a_dataset/tfData/hexa_magneto2/FFNN/caseall" \
+--load_model_path="a_result/hexa_magneto2/FFNN/case3_latent256_layer3/saved_model" \
+--log_dir="check_model/hexa_magneto2/FFNN/case3_testall_latent256_layer3" \
+--latent_size=256 \
+--output_size=18 \
+--num_layer=3
+
+
+#######################
+
+python3 main_check_model_sn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/hexa_magneto2/SN/case1"  \
+--test_dataset_path="a_dataset/tfData/hexa_magneto2/SN/caseall" \
+--load_model_path="a_result/hexa_magneto2/SN/case1_latent128_layer2_np2/saved_model" \
+--log_dir="check_model/hexa_magneto2/SN/case1_testall_latent128_layer2_np2" \
+--latent_size=128 \
+--output_size=3 \
+--num_layer=2 \
+--num_processing_steps=2
+
+python3 main_check_model_sn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/hexa_magneto2/SN/case2"  \
+--test_dataset_path="a_dataset/tfData/hexa_magneto2/SN/caseall" \
+--load_model_path="a_result/hexa_magneto2/SN/case2_latent128_layer2_np2/saved_model" \
+--log_dir="check_model/hexa_magneto2/SN/case2_testall_latent128_layer2_np2" \
+--latent_size=128 \
+--output_size=3 \
+--num_layer=2 \
+--num_processing_steps=2
+
+python3 main_check_model_sn.py \
+--batch_size=64 \
+--dataset_path="a_dataset/tfData/hexa_magneto2/SN/case3"  \
+--test_dataset_path="a_dataset/tfData/hexa_magneto2/SN/caseall" \
+--load_model_path="a_result/hexa_magneto2/SN/case3_latent128_layer2_np2/saved_model" \
+--log_dir="check_model/hexa_magneto2/SN/case3_testall_latent128_layer2_np2" \
+--latent_size=128 \
+--output_size=3 \
+--num_layer=2 \
+--num_processing_steps=2

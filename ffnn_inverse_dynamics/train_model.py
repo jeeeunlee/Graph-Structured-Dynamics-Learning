@@ -46,9 +46,11 @@ class TrainModel():
                                 ).batch(self.batch_size, drop_remainder=True)
             self.dataset_batch_signature = self.get_dataset_signature(self.dataset_batch)
 
-    def save_model(self, batch_loss_sum):
-        if( self.min_loss > batch_loss_sum and 
-                self.SAVE_MODEL_TIMER.check(self.save_every_seconds) ):
+    def save_model(self, batch_loss_sum, bchecktime=True):
+        checktimer = True
+        if(bchecktime):
+            checktimer = self.SAVE_MODEL_TIMER.check(self.save_every_seconds)
+        if( self.min_loss > batch_loss_sum and checktimer ):
             print(" model saving start " )
             self.min_loss = batch_loss_sum
             to_save = snt.Module()
@@ -98,7 +100,7 @@ class TrainModel():
     # ======================================        
     def _set_logger(self, args):
         # Make log Directory
-        self.save_every_seconds = 5 # [second] 300 = 5min
+        self.save_every_seconds = 1 # [second] 300 = 5min
         if(args.log_dir == ''):
             log_dir = os.path.join("a_result", get_local_time() )
         else:
@@ -264,6 +266,7 @@ class TorqueErrorModel(TrainModel):
                 
                 if(break_count > 3):
                     print(" cnt = {:02d}".format(break_count))
+                    self.save_model(batch_loss_sum,False)   
                     break
                     
             else:

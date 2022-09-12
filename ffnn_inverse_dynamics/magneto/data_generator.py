@@ -7,7 +7,7 @@ import pickle
 
 from gn_inverse_dynamics.utils.myutils import * 
 from gn_inverse_dynamics.utils import mymath as mymath
-from ffnn_inverse_dynamics.hexamagneto.trajectory_data_generator import MagnetoJointTrajDataGenerator
+from ffnn_inverse_dynamics.magneto.trajectory_data_generator import MagnetoJointTrajDataGenerator
 
 class PassThresholdParam():
     def __init__(self, init_traj_pass_threshold=0, traj_pass_threshold=0):

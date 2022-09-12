@@ -6,7 +6,9 @@ case2: rx_right
 case3: ry
 case4: 0_0
 case5: 60_60
-case6: 60_60~300_300
+case5_2: 60_60, 180_180, 300_300
+case5_3: 60_60~300_300
+case5_4: 120_120~300_300
 
 xx_xx
 case7: random 6 (1/3)
