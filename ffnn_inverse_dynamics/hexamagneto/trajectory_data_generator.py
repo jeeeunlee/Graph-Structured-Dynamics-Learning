@@ -4,17 +4,17 @@ import tensorflow as tf
 import numpy as np
 import math
 
-from gn_inverse_dynamics.robot_graph_generator.nonamagneto import nonamagneto_definition as NonaMagneto
-from gn_inverse_dynamics.robot_graph_generator.nonamagneto.leg_edge_graph_generator import nonamagneto_leg_definition as NonaMagnetoLegGraph
+from gn_inverse_dynamics.robot_graph_generator.hexamagneto import hexamagneto_definition as HexaMagneto
+from gn_inverse_dynamics.robot_graph_generator.hexamagneto.leg_edge_graph_generator import hexamagneto_leg_definition as HexaMagnetoLegGraph
 
 from gn_inverse_dynamics.utils import myutils as myutils
 from gn_inverse_dynamics.utils import mymath as mymath
 
 from gn_inverse_dynamics.robot_graph_generator.load_data_from_urdf import *
 
-class NonaMagnetoJointTrajDataGenerator():
+class HexaMagnetoJointTrajDataGenerator():
     def __init__(self, traj_data_path, pass_param=None):
-        myutils.log_with_time("NonaMagnetoJointTrajDataGenerator")
+        myutils.log_with_time("HexaMagnetoJointTrajDataGenerator")
         self.set_traj_folders(traj_data_path)
         self.data_size = 0
         if(pass_param):
@@ -51,30 +51,30 @@ class NonaMagnetoJointTrajDataGenerator():
         inputdata.extend(traj_dict['base_body_vel'][0:3])
 
         inputdata.append( traj_dict['mag_al'][0] )
-        inputdata.append( traj_dict['ct_al'][0] )
+        # inputdata.append( traj_dict['ct_al'][0] )
         inputdata.append( traj_dict['mag_ar'][0] )
-        inputdata.append( traj_dict['ct_ar'][0] )
+        # inputdata.append( traj_dict['ct_ar'][0] )
 
         inputdata.append( traj_dict['mag_bl'][0] )
-        inputdata.append( traj_dict['ct_bl'][0] )
+        # inputdata.append( traj_dict['ct_bl'][0] )
         inputdata.append( traj_dict['mag_br'][0] )
-        inputdata.append( traj_dict['ct_br'][0] )  
+        # inputdata.append( traj_dict['ct_br'][0] )  
               
         inputdata.append( traj_dict['mag_cl'][0] )
-        inputdata.append( traj_dict['ct_cl'][0] )
+        # inputdata.append( traj_dict['ct_cl'][0] )
         inputdata.append( traj_dict['mag_cr'][0] )
-        inputdata.append( traj_dict['ct_cr'][0] )
+        # inputdata.append( traj_dict['ct_cr'][0] )
 
-        for legname in NonaMagnetoLegGraph.NonaMagnetoGraphEdge:
+        for legname in HexaMagnetoLegGraph.HexaMagnetoGraphEdge:
             for legjointname in ['coxa', 'femur', 'tibia']:
                 jointname = "{}_{}_joint".format(legname, legjointname)
 
-                inputdata.append(traj_dict['q'][ NonaMagneto.NonaMagnetoJoint[jointname] ]) # 3
-                inputdata.append(traj_dict['dq'][ NonaMagneto.NonaMagnetoJoint[jointname] ]) # 3
+                inputdata.append(traj_dict['q'][ HexaMagneto.HexaMagnetoJoint[jointname] ]) # 3
+                inputdata.append(traj_dict['dq'][ HexaMagneto.HexaMagnetoJoint[jointname] ]) # 3
                 if('q_des' in traj_dict):
-                    inputdata.append(traj_dict['q_des'][ NonaMagneto.NonaMagnetoJoint[jointname] ]) # 3
-                    inputdata.append(traj_dict['dq_des'][ NonaMagneto.NonaMagnetoJoint[jointname] ]) # 3                     
-                targetdata.append( traj_dict['trq'][ NonaMagneto.NonaMagnetoJoint[jointname] ] )
+                    inputdata.append(traj_dict['q_des'][ HexaMagneto.HexaMagnetoJoint[jointname] ]) # 3
+                    inputdata.append(traj_dict['dq_des'][ HexaMagneto.HexaMagnetoJoint[jointname] ]) # 3                     
+                targetdata.append( traj_dict['trq'][ HexaMagneto.HexaMagnetoJoint[jointname] ] )
 
         return inputdata, targetdata
 

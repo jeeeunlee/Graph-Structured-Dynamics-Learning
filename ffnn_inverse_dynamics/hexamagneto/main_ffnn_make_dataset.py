@@ -9,7 +9,7 @@ sys.path.append(CURRENT_DIR_PATH)
 
 
 from gn_inverse_dynamics.utils.myutils import *
-from ffnn_inverse_dynamics.nonamagneto.data_generator import *
+from ffnn_inverse_dynamics.hexamagneto.data_generator import *
 
 def make_dataset(args):
     # SET DATA PATH

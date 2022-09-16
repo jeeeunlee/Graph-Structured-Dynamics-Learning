@@ -52,9 +52,9 @@ class NonaMagnetoJointTrajDataGenerator():
 
         for legname in NonaMagnetoLegGraph.NonaMagnetoGraphEdge:
             magdataname = "mag_{}".format(legname.lower())
-            cnctdataname = "ct_{}".format(legname.lower())
+            # cnctdataname = "ct_{}".format(legname.lower())
             inputdata.append( traj_dict[magdataname][0] )
-            inputdata.append( traj_dict[cnctdataname][0] )
+            # inputdata.append( traj_dict[cnctdataname][0] )
 
         for legname in NonaMagnetoLegGraph.NonaMagnetoGraphEdge:
             for legjointname in ['coxa', 'femur', 'tibia']:

@@ -4,7 +4,38 @@
 
 
 ######################################################
-#                       Training                         #
+#                       dataset                      #
+######################################################
+
+python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto2/case1"  \
+--dataset_dir="/a_dataset/tfData/hexa_magneto2/FFNN/case1" 
+
+python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto2/case2"  \
+--dataset_dir="/a_dataset/tfData/hexa_magneto2/FFNN/case2" 
+
+python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto2/case3"  \
+--dataset_dir="/a_dataset/tfData/hexa_magneto2/FFNN/case3" 
+
+python3 ffnn_inverse_dynamics/hexamagneto/main_ffnn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto2/caseall"  \
+--dataset_dir="/a_dataset/tfData/hexa_magneto2/FFNN/caseall" 
+
+
+python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto2/case1"  \
+--dataset_dir="/a_dataset/tfData/hexa_magneto2/SN/case1" 
+
+python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto2/case2"  \
+--dataset_dir="/a_dataset/tfData/hexa_magneto2/SN/case2" 
+
+python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto2/case3"  \
+--dataset_dir="/a_dataset/tfData/hexa_magneto2/SN/case3" 
+
+python3 sn_inverse_dynamics/hexamagneto/main_sn_make_dataset.py --raw_data_dir="/a_dataset/rawData/hexa_magneto2/caseall"  \
+--dataset_dir="/a_dataset/tfData/hexa_magneto2/SN/caseall" 
+
+
+
+######################################################
+#                       Training                     #
 ######################################################
 
 python3 main_train_model_ffnn.py --dataset_path="a_dataset/tfData/hexa_magneto2/FFNN/case1"  \

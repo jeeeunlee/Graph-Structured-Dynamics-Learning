@@ -57,9 +57,9 @@ class MagnetoJointTrajDataGenerator():
             leg_data.extend( np.matmul(self.leg_configs[legname].R_ib, gb).tolist() ) # 3
             # leg_data.extend( np.matmul(self.leg_configs[legname].AdT_ib, base_vel).tolist() ) # 6
 
-            magdataname = "mag_{}".format(legname.lower())
+            magdataname = "mag_{}".format(legname.lower())            
+            leg_data.append( traj_dict[magdataname][0] )            
             cnctdataname = "ct_{}".format(legname.lower())
-            leg_data.append( traj_dict[magdataname][0] )
             leg_data.append( traj_dict[cnctdataname][0] )
             
             for legjointname in ['coxa', 'femur', 'tibia']:
