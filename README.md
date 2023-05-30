@@ -1,9 +1,22 @@
-# gn-inverse-dynamics
+# Sample efficient inverse dynamics learning
+
+[<img src="https://i.ytimg.com/vi/x3OSzdY_GII/maxresdefault.jpg" width="50%">](https://youtu.be/x3OSzdY_GII "Now in Android: 55")
+
 Inverse dynamics Learning of [Magneto](https://research.csiro.au/robotics/paper-magneto-a-versatile-multi-limbed-inspection-robot/)
 
 The code is developed based on
 - [graph_nets](https://github.com/deepmind/graph_nets) from deepmind
 - [dartpy](https://github.com/dartsim/dart) for dynamics simulation environment 
+
+## Citation
+```
+@article{lee2022sample,
+  title={Sample Efficient Dynamics Learning for Symmetrical Legged Robots: Leveraging Physics Invariance and Geometric Symmetries},
+  author={Lee, Jee-eun and Lee, Jaemin and Bandyopadhyay, Tirthankar and Sentis, Luis},
+  journal={arXiv preprint arXiv:2210.07329},
+  year={2022}
+}
+```
 
 ## 1. Virtual environment settings
 Due to the current issue in using darpy with conda, please use python3-venv.
