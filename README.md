@@ -1,6 +1,6 @@
 # Sample efficient inverse dynamics learning
 
-[<img src="https://i.ytimg.com/vi/x3OSzdY_GII/maxresdefault.jpg" width="50%">](https://youtu.be/x3OSzdY_GII "Now in Android: 55")
+[<img src="https://i.ytimg.com/vi/x3OSzdY_GII/maxresdefault.jpg" width="50%">](https://youtu.be/x3OSzdY_GII "Go to Youtube")
 
 Inverse dynamics Learning of [Magneto](https://research.csiro.au/robotics/paper-magneto-a-versatile-multi-limbed-inspection-robot/)
 
